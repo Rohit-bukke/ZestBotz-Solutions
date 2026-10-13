@@ -1,23 +1,21 @@
 import './App.css'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './layout/MainLayout'
-import { About } from './pages/About'
+import About  from './pages/About'
 import { Careers } from './pages/Careers'
 import { Contact } from './pages/Contact'
-import { Home } from './pages/Home'
+import Home  from './pages/Home'
 import { Industries } from './pages/Industries'
-import { Services } from './pages/Services'
 import { Work } from './pages/Work'
 
 import { AgenticAIPage } from './pages/services-page/AgenticAIPage'
 import { ChatBotPage } from './pages/services-page/ChatBotPage'
 import { DataAnalyticsPage } from './pages/services-page/DataAnalyticsPage'
 import { ERPPage } from './pages/services-page/ERPPage'
-import { HealthCarePage } from './pages/services-page/HealthCarePage'
-import { ProcessWorkflowAutomationPage } from './pages/services-page/ProcessWorkflowAutomationPage'
-import { WebScrapingPage } from './pages/services-page/WebScrapingPage'
-import { WebSoftwarePage } from './pages/services-page/WebSoftwarePage'
-
+import  HealthCarePage  from './pages/services-page/HealthCarePage'
+import {ProcessWorkflowAutomationPage} from './pages/services-page/ProcessWorkflowAutomationPage'
+import  WebScrapingPage  from './pages/services-page/WebScrapingPage'
+import WebSoftwarePage from "./pages/services-page/WebSoftwarePage";
 function App() {
   return (
     <Routes>
@@ -25,8 +23,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
 
-        <Route path="/services" element={<Services />} />
-        <Route path="/ZestBotz-services" element={<Services />} />
 
         <Route path="/services/process-workflow-page" element={<ProcessWorkflowAutomationPage />} />
         <Route path="/services/agentic-ai-page" element={<AgenticAIPage />} />

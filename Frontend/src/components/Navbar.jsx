@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 const serviceLinks = [
-  ['All Services', '/zestbotz-services'],
   ['Process & Workflow Automation', '/services/process-workflow-page'],
   ['Agentic AI Solutions', '/services/agentic-ai-page'],
   ['Web Scraping & Data Solutions', '/services/web-scraping-page'],
@@ -208,7 +207,7 @@ export function Navbar() {
 
           <Link
             to="/contact"
-            className="mt-5 block rounded-full bg-[#11101f] py-3 text-center text-[15px] font-medium text-white"
+            className="mt-3 block rounded-full bg-[#11101f] py-1 text-center text-[15px] font-medium text-white"
           >
             Contact
           </Link>
