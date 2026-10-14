@@ -5,7 +5,7 @@ import About  from './pages/About'
 import { Careers } from './pages/Careers'
 import { Contact } from './pages/Contact'
 import Home  from './pages/Home'
-import { Industries } from './pages/Industries'
+import Industries from './pages/Industries'
 import { Work } from './pages/Work'
 
 import { AgenticAIPage } from './pages/services-page/AgenticAIPage'
