@@ -109,6 +109,9 @@ export function Navbar() {
         <div className="hidden items-center gap-9 lg:flex">
           <Dropdown label="Services" items={serviceLinks} />
           <Dropdown label="Our Work" items={workLinks} />
+          <NavLink to="/products" className={topLink}>
+            Products
+          </NavLink>
           <NavLink to="/careers" className={topLink}>
             Careers
           </NavLink>

@@ -2,12 +2,12 @@ import './App.css'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './layout/MainLayout'
 import About  from './pages/About'
-import { Careers } from './pages/Careers'
-import { Contact } from './pages/Contact'
+import Careers from './pages/Careers'
+import  Contact  from './pages/Contact'
 import Home  from './pages/Home'
 import Industries from './pages/Industries'
-import { Work } from './pages/Work'
-
+import Work from './pages/Work'
+import Products from './pages/Products'
 import { AgenticAIPage } from './pages/services-page/AgenticAIPage'
 import { ChatBotPage } from './pages/services-page/ChatBotPage'
 import { DataAnalyticsPage } from './pages/services-page/DataAnalyticsPage'
@@ -32,7 +32,7 @@ function App() {
         <Route path="/services/chatbot-page" element={<ChatBotPage />} />
         <Route path="/services/erp-page" element={<ERPPage />} />
         <Route path="/services/healthcare-page" element={<HealthCarePage />} />
-
+        <Route path="/products" element={<Products/>}/>
         <Route path="/industries" element={<Industries />} />
         <Route path="/work" element={<Work />} />
         <Route path="/careers" element={<Careers />} />
