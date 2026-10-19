@@ -1,16 +1,43 @@
-# React + Vite
+# ZestBotz Solutions — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The frontend for the ZestBotz Solutions website, built with React and Vite.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js `20.19+` or `22.12+`
+- npm (included with Node.js)
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+From the repository root, open a terminal and run:
 
-## Expanding the Oxlint configuration
+```bash
+cd Frontend
+npm ci
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Open the local URL printed by Vite in your terminal (usually `http://localhost:5173`). Leave the development server running while you use the site. Press `Ctrl+C` in the terminal to stop it.
+
+If you are already in the `Frontend` directory, skip the `cd Frontend` command.
+
+## Other commands
+
+Run these from the `Frontend` directory:
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server with hot reload |
+| `npm run build` | Build the production site into `dist/` |
+| `npm run preview` | Preview the production build locally (run `npm run build` first) |
+| `npm run lint` | Run Oxlint |
+
+## Production build
+
+```bash
+cd Frontend
+npm ci
+npm run build
+```
+
+The generated static site is in `Frontend/dist/`. To check the production build locally, run `npm run preview` from `Frontend`.
