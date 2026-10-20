@@ -316,7 +316,7 @@ export function Contact() {
               >
                 {status.loading ? 'Sending...' : 'Send enquiry'}
                 {!status.loading && (
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"></span>
                 )}
               </button>
 
