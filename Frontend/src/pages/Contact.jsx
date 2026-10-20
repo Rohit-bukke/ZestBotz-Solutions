@@ -1,19 +1,25 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams, Link } from 'react-router-dom'
+import { School, Sparkles, CheckCircle2 } from 'lucide-react'
 
 const interests = [
+  'SchoolOS (School Operations Platform)',
+  'ZestRCM (Healthcare RCM)',
+  'ZestHR (Human Resources)',
   'AI & Agentic AI',
   'Process & Workflow Automation',
   'Web Scraping & Data Solutions',
   'Web & Software Development',
   'Data Analytics',
   'ERP Solutions',
-  'Healthcare RCM',
   'Chatbot Integration',
   'Other',
 ]
 
 export function Contact() {
+  const [searchParams] = useSearchParams()
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -21,6 +27,35 @@ export function Contact() {
     interest: '',
     message: '',
   })
+
+  useEffect(() => {
+    const rawInterest = searchParams.get('interest')
+    if (rawInterest) {
+      const lower = rawInterest.toLowerCase()
+      if (lower.includes('schoolos') || lower.includes('school')) {
+        setForm((prev) => ({
+          ...prev,
+          interest: 'SchoolOS (School Operations Platform)',
+          message: prev.message || 'Hello ZestBotz team, I would like to enquire about SchoolOS for our school/institution. We are interested in the automated WhatsApp parent alerts, physical perimeter gate passes, and constructive academic analytics.',
+        }))
+      } else if (lower.includes('rcm')) {
+        setForm((prev) => ({
+          ...prev,
+          interest: 'ZestRCM (Healthcare RCM)',
+        }))
+      } else if (lower.includes('hr')) {
+        setForm((prev) => ({
+          ...prev,
+          interest: 'ZestHR (Human Resources)',
+        }))
+      } else {
+        const found = interests.find((item) => item.toLowerCase().includes(lower))
+        if (found) {
+          setForm((prev) => ({ ...prev, interest: found }))
+        }
+      }
+    }
+  }, [searchParams])
 
   const [status, setStatus] = useState({
     loading: false,
@@ -130,6 +165,28 @@ export function Contact() {
               Tell us a little about your requirements and we’ll have the
               information ready for a conversation.
             </p>
+
+            {form.interest.includes('SchoolOS') && (
+              <div className="mt-5 p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-900 flex items-start gap-3">
+                <School className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                <div className="text-xs sm:text-sm">
+                  <p className="font-semibold text-blue-950">
+                    Enquiring about ZestBotz SchoolOS™ (B2B SaaS)
+                  </p>
+                  <p className="mt-0.5 text-blue-800">
+                    Looking for a school demonstration, live WhatsApp parent alerts, perimeter gate pass safety, or custom pricing for CBSE / ICSE institutions? We will prepare tailored materials for your school.
+                  </p>
+                  <div className="mt-2 flex items-center gap-3">
+                    <Link
+                      to="/products#schoolos"
+                      className="font-medium text-blue-700 underline hover:text-blue-900"
+                    >
+                      ← Back to SchoolOS Overview
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
