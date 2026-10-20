@@ -16,6 +16,9 @@ import  HealthCarePage  from './pages/services-page/HealthCarePage'
 import {ProcessWorkflowAutomationPage} from './pages/services-page/ProcessWorkflowAutomationPage'
 import  WebScrapingPage  from './pages/services-page/WebScrapingPage'
 import WebSoftwarePage from "./pages/services-page/WebSoftwarePage";
+import ZestRCM from './pages/products-page/ZestRCM';
+import {ZestHR} from './pages/products-page/ZestHR';
+import {ZestSchool} from './pages/products-page/ZestSchool'
 function App() {
   return (
     <Routes>
@@ -33,6 +36,9 @@ function App() {
         <Route path="/services/erp-page" element={<ERPPage />} />
         <Route path="/services/healthcare-page" element={<HealthCarePage />} />
         <Route path="/products" element={<Products/>}/>
+        <Route path="/products/zestRCM" element={<ZestRCM />} />
+        <Route path="/products/zestSchool" element={<ZestSchool />} />
+        <Route path="/products/zestHR" element={<ZestHR />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/work" element={<Work />} />
         <Route path="/careers" element={<Careers />} />

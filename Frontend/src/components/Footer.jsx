@@ -102,31 +102,41 @@ export function Footer() {
         {/* Main content */}
         <div className="grid items-start gap-12 md:grid-cols-2 lg:grid-cols-[1fr_1.6fr_auto] lg:gap-x-16">
           {/* Brand */}
-          <div>
-            <Link to="/" className="inline-block">
-              <img src={logo} alt="ZestBotz" className="-ml-10 w-[145px]" />
-            </Link>
+            
+{/* Brand */}
+<div className="flex flex-col items-start">
+  <Link
+    to="/"
+    aria-label="ZestBotz home"
+    className="block w-fit"
+  >
+    <img
+  src={logo}
+  alt="ZestBotz"
+  className="-ml-6 block h-auto w-[120px] object-contain"
+/>
+  </Link>
 
-            <p className="mt-5 max-w-xs text-[15px] leading-6 text-[#2b2b2b]">
-              {company.tagline ||
-                'Intelligent automation and analytics for modern businesses.'}
-            </p>
+  <p className="mt-5 max-w-xs text-[15px] leading-6 text-[#2b2b2b]">
+    {company.tagline ||
+      'Intelligent automation and analytics for modern businesses.'}
+  </p>
 
-            <div className="mt-6 flex gap-3">
-              {company.social?.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href || '#'}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={item.name}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E8590C]"
-                >
-                  <SocialIcon name={item.name} />
-                </a>
-              ))}
-            </div>
-          </div>
+  <div className="mt-6 flex gap-3">
+    {company.social?.map((item) => (
+      <a
+        key={item.name}
+        href={item.href || '#'}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={item.name}
+        className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E8590C]"
+      >
+        <SocialIcon name={item.name} />
+      </a>
+    ))}
+  </div>
+</div>
 
           {/* Services (two columns) */}
           <div>
