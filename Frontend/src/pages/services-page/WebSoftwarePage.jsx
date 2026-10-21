@@ -437,7 +437,7 @@ export default function WebSoftwarePage() {
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#E8590C] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#cf4e09] hover:shadow-lg hover:shadow-[#E8590C]/20"
               >
                 Discuss Your Project
@@ -813,7 +813,7 @@ export default function WebSoftwarePage() {
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#E8590C] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#cf4e09] hover:shadow-lg hover:shadow-[#E8590C]/20"
               >
                 Talk to Our Team

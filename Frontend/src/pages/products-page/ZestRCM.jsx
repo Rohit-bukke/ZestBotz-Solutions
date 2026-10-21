@@ -242,7 +242,7 @@ export default function ZestRCMPage() {
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#FF631C] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-[#E95412]"
               >
                 Request a Demo
@@ -376,7 +376,7 @@ export default function ZestRCMPage() {
             </p>
 
             <Link
-              to="/contact"
+              to="/book-a-call"
               className="mt-8 inline-flex items-center gap-3 rounded-xl bg-[#FF631C] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#E95412]"
             >
               Discuss Your Requirements
@@ -505,7 +505,7 @@ export default function ZestRCMPage() {
           </p>
 
           <Link
-            to="/contact"
+            to="/book-a-call"
             className="mt-9 inline-flex items-center justify-center gap-3 rounded-xl bg-[#FF631C] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-[#E95412]"
           >
             Request a Demo

@@ -339,7 +339,7 @@ export function AgenticAIPage() {
 
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E8590C] px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#c94b09] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8590C]"
               >
                 Discuss your workflow
@@ -475,7 +475,7 @@ export function AgenticAIPage() {
             />
 
             <Link
-              to="/contact"
+              to="/book-a-call"
               className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#E8590C] hover:text-[#c94b09]"
             >
               Discuss your requirements
@@ -561,7 +561,7 @@ export function AgenticAIPage() {
             </p>
 
             <Link
-              to="/contact"
+              to="/book-a-call"
               className="group mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E8590C] px-7 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Talk to us

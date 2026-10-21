@@ -18,7 +18,8 @@ import  WebScrapingPage  from './pages/services-page/WebScrapingPage'
 import WebSoftwarePage from "./pages/services-page/WebSoftwarePage";
 import ZestRCM from './pages/products-page/ZestRCM';
 import {ZestHR} from './pages/products-page/ZestHR';
-import {ZestSchool} from './pages/products-page/ZestSchool'
+import ZestSchool from './pages/products-page/ZestSchool'
+import BookingPage from './pages/BookingPage'
 function App() {
   return (
     <Routes>
@@ -44,6 +45,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/book-a-call" element={<BookingPage />} />
       </Route>
     </Routes>
   )
