@@ -132,7 +132,7 @@ export function Navbar() {
           <img
             src={logo}
             alt="ZestBotz"
-            className="block h-auto w-[120px]"
+            className="block h-auto w-[60px]"
           />
         </Link>
 

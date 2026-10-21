@@ -15,7 +15,7 @@ const services = [
 
 const companyLinks = [
   ['About Us', '/about'],
-  ['Services', '/zestbotz-services'],
+  ['Services', '/#services'],
   ['Industries', '/industries'],
   ['Our Work', '/work'],
   ['Careers', '/careers'],
@@ -113,7 +113,7 @@ export function Footer() {
     <img
   src={logo}
   alt="ZestBotz"
-  className="-ml-6 block h-auto w-[120px] object-contain"
+  className="-ml-1 block h-auto w-[60px] object-contain"
 />
   </Link>
 

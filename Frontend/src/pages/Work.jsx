@@ -63,7 +63,7 @@ function Work() {
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c94b08]"
               >
                 Explore our services
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"></span>
               </Link>
 
               <a
@@ -90,7 +90,7 @@ function Work() {
                   </h2>
                 </div>
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E8590C]/10 text-xl text-[#E8590C]">
-                  ↗
+                  
                 </div>
               </div>
 
@@ -254,7 +254,7 @@ function Work() {
                       aria-hidden="true"
                       className="text-lg transition group-hover:text-[#E8590C]"
                     >
-                      ↗
+                      
                     </span>
                   </span>
                 </div>
@@ -389,7 +389,7 @@ function Work() {
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#f36a1b]"
           >
             Let’s talk
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true"></span>
           </Link>
         </div>
       </section>

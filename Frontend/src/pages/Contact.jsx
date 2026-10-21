@@ -345,10 +345,10 @@ export function Contact() {
                 <div>
                   <h3 className="text-sm font-semibold">Email</h3>
                   <a
-                    href="mailto:info@zestbotz.com"
+                    href="mailto:support@zestbotz.com"
                     className="mt-1 inline-block text-sm text-[#666666] transition hover:text-[#E8590C]"
                   >
-                    info@zestbotz.com
+                  support@zestbotz.com
                   </a>
                 </div>
               </div>
