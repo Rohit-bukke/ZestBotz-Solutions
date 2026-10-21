@@ -17,7 +17,7 @@ import {ProcessWorkflowAutomationPage} from './pages/services-page/ProcessWorkfl
 import  WebScrapingPage  from './pages/services-page/WebScrapingPage'
 import WebSoftwarePage from "./pages/services-page/WebSoftwarePage";
 import ZestRCM from './pages/products-page/ZestRCM';
-import {ZestHR} from './pages/products-page/ZestHR';
+import ZestHR from './pages/products-page/ZestHR';
 import ZestSchool from './pages/products-page/ZestSchool'
 import BookingPage from './pages/BookingPage'
 function App() {
