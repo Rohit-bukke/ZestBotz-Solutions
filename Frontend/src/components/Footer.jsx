@@ -18,7 +18,7 @@ const companyLinks = [
   ['Services', '/#services'],
   ['Industries', '/industries'],
   ['Our Work', '/work'],
-  ['Careers', '/careers'],
+  ['Careers', '/contact'],
   ['Contact', '/contact'],
 ]
 
