@@ -1,25 +1,22 @@
 import { Link } from 'react-router-dom'
-import { company } from '../data/company.js'
+import { company, servicesList } from '../data/company.js'
 import logo from '../assets/logo.png'
 
-const services = [
-  ['Process & Workflow Automation', '/services/process-workflow-page'],
-  ['Agentic AI Solutions', '/services/agentic-ai-page'],
-  ['Web Scraping & Data Solutions', '/services/web-scraping-page'],
-  ['Web & Software Development', '/services/web-software-page'],
-  ['Data Analytics & Dashboards', '/services/data-analytics'],
-  ['Chatbot Integration', '/services/chatbot-page'],
-  ['ERP Solutions', '/services/erp-page'],
-  ['Healthcare RCM Data Solutions', '/services/healthcare-page'],
+const companyLinks = [
+  ['About ZestBotz', '/about'],
+  ['Services Overview', '/services'],
+  ['Target Industries', '/industries'],
+  ['Product Portfolio', '/products'],
+  ['Case Studies & Approach', '/work'],
+  ['Careers', '/careers'],
+  ['Contact Us', '/contact'],
+  ['Schedule Consultation', '/book-a-call'],
 ]
 
-const companyLinks = [
-  ['About Us', '/about'],
-  ['Services', '/#services'],
-  ['Industries', '/industries'],
-  ['Our Work', '/work'],
-  ['Careers', '/careers'],
-  ['Contact', '/contact'],
+const productLinks = [
+  ['SchoolOS (Roadmap)', '/products/zestSchool'],
+  ['ZestRCM Analytics (Prototype)', '/products/zestRCM'],
+  ['ZestHR (Concept)', '/products/zestHR'],
 ]
 
 function SocialIcon({ name }) {
@@ -33,6 +30,7 @@ function SocialIcon({ name }) {
     strokeWidth: 1.8,
     strokeLinecap: 'round',
     strokeLinejoin: 'round',
+    'aria-hidden': 'true',
   }
 
   if (n.includes('linkedin'))
@@ -40,15 +38,6 @@ function SocialIcon({ name }) {
       <svg {...props}>
         <rect x="3" y="3" width="18" height="18" rx="3" />
         <path d="M8 11v5M8 8v.01M12 16v-5M12 13a2.5 2.5 0 0 1 5 0v3" />
-      </svg>
-    )
-
-  if (n.includes('instagram'))
-    return (
-      <svg {...props}>
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <path d="M17.5 6.5v.01" />
       </svg>
     )
 
@@ -65,129 +54,156 @@ function SocialIcon({ name }) {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#faf9f6] text-left text-[#111]">
+    <footer className="relative overflow-hidden border-t border-black/[0.08] bg-[#0B0B0D] text-left text-white">
       {/* Ambient gradient */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 opacity-30"
         aria-hidden="true"
         style={{
           background: `
-            radial-gradient(
-              ellipse 35% 60% at 15% 20%,
-              rgba(255, 140, 70, 0.20),
-              transparent 70%
-            ),
-            radial-gradient(
-              ellipse 40% 55% at 45% 45%,
-              rgba(232, 89, 12, 0.16),
-              transparent 70%
-            ),
-            radial-gradient(
-              ellipse 35% 50% at 75% 25%,
-              rgba(255, 190, 130, 0.18),
-              transparent 70%
-            ),
-            radial-gradient(
-              ellipse 45% 55% at 60% 90%,
-              rgba(255, 125, 50, 0.12),
-              transparent 70%
-            )
+            radial-gradient(ellipse 35% 60% at 15% 20%, rgba(255, 99, 28, 0.25), transparent 70%),
+            radial-gradient(ellipse 40% 55% at 75% 75%, rgba(255, 140, 70, 0.15), transparent 70%)
           `,
-          filter: 'blur(35px)',
-          transform: 'scale(1.15)',
+          filter: 'blur(45px)',
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-16 sm:px-8 lg:px-10">
-        {/* Main content */}
-        <div className="grid items-start gap-12 md:grid-cols-2 lg:grid-cols-[1fr_1.6fr_auto] lg:gap-x-16">
-          {/* Brand */}
-            
-{/* Brand */}
-<div className="flex flex-col items-start">
-  <Link
-    to="/"
-    aria-label="ZestBotz home"
-    className="block w-fit"
-  >
-    <img
-  src={logo}
-  alt="ZestBotz"
-  className="-ml-1 block h-auto w-[60px] object-contain"
-/>
-  </Link>
+      <div className="relative mx-auto max-w-7xl px-5 pt-16 pb-12 sm:px-8 lg:px-10">
+        {/* Main content grid */}
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          {/* Brand Column */}
+          <div className="flex flex-col items-start lg:col-span-1">
+            <Link to="/" aria-label="ZestBotz home" className="flex items-center gap-2.5">
+              <img
+                src={logo}
+                alt="ZestBotz Logo"
+                className="block h-10 w-auto object-contain brightness-110"
+              />
+              <span className="text-2xl font-bold tracking-tight text-white">
+                Zest<span className="text-[#FF631C]">Botz</span>
+              </span>
+            </Link>
 
-  <p className="mt-5 max-w-xs text-[15px] leading-6 text-[#2b2b2b]">
-    {company.tagline ||
-      'Intelligent automation and analytics for modern businesses.'}
-  </p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-[#FF631C]">
+              {company.positioning}
+            </p>
 
-  <div className="mt-6 flex gap-3">
-    {company.social?.map((item) => (
-      <a
-        key={item.name}
-        href={item.href || '#'}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={item.name}
-        className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E8590C]"
-      >
-        <SocialIcon name={item.name} />
-      </a>
-    ))}
-  </div>
-</div>
+            <p className="mt-3 text-sm leading-6 text-gray-300">
+              {company.tagline}
+            </p>
 
-          {/* Services (two columns) */}
-          <div>
-            <h3 className="font-serif text-base font-semibold">Services</h3>
-            <ul className="mt-5 md:columns-2 md:gap-x-10">
-              {services.map(([label, path]) => (
-                <li key={path} className="break-inside-avoid pb-3">
+            <div className="mt-5 rounded-xl border border-white/10 bg-white/[0.04] p-3 text-xs text-gray-400">
+              <p className="font-semibold text-white">Three Central Promises:</p>
+              <p className="mt-1 text-gray-300">Automate work · Connect data · Improve decisions</p>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              {company.social?.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href || '#'}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.name}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-[#FF631C] hover:bg-[#FF631C]"
+                >
+                  <SocialIcon name={item.name} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Official Services (2 cols worth on desktop or clean stack) */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center justify-between pb-2 border-b border-white/10">
+              <h3 className="text-base font-semibold text-white">
+                Official Services
+              </h3>
+              <Link to="/services" className="text-xs text-[#FF631C] hover:underline">
+                View All 8 Services →
+              </Link>
+            </div>
+            <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+              {servicesList.map((service) => (
+                <li key={service.id}>
                   <Link
-                    to={path}
-                    className="text-[15px] text-[#2b2b2b] transition-colors hover:text-[#E8590C]"
+                    to={service.href}
+                    className="group block text-xs sm:text-[13px] text-gray-300 transition-colors hover:text-[#FF631C]"
                   >
-                    {label}
+                    <span className="text-[#FF631C] mr-1.5 opacity-80 group-hover:opacity-100">
+                      {service.number}.
+                    </span>
+                    {service.shortTitle}
                   </Link>
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 pt-4 border-t border-white/10">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                Product Portfolio (Verified Status)
+              </h4>
+              <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-2">
+                {productLinks.map(([label, path]) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className="text-xs text-gray-300 transition-colors hover:text-[#FF631C]"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-serif text-base font-semibold">Company</h3>
-            <ul className="mt-5 space-y-3">
+          {/* Company & Quick Links */}
+          <div className="lg:col-span-1">
+            <h3 className="text-base font-semibold text-white pb-2 border-b border-white/10">
+              Company & Inquiries
+            </h3>
+            <ul className="mt-4 space-y-2.5">
               {companyLinks.map(([label, path]) => (
                 <li key={path}>
                   <Link
                     to={path}
-                    className="text-[15px] text-[#2b2b2b] transition-colors hover:text-[#E8590C]"
+                    className="text-xs sm:text-[13px] text-gray-300 transition-colors hover:text-[#FF631C]"
                   >
                     {label}
                   </Link>
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 rounded-xl border border-[#FF631C]/30 bg-[#FF631C]/10 p-3.5">
+              <p className="text-xs font-semibold text-white">Discovery & Consultations</p>
+              <p className="mt-1 text-[11.5px] text-gray-300 leading-relaxed">
+                Discuss an automation, data pipeline, or custom software requirement with our team.
+              </p>
+              <Link
+                to="/book-a-call"
+                className="mt-2.5 inline-block text-xs font-semibold text-[#FF631C] hover:underline"
+              >
+                Schedule a 30-min discovery call →
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 border-t border-[#1a1a2e] py-6">
-          <div className="flex flex-col gap-2 text-xs text-[#2b2b2b] sm:flex-row sm:items-center">
-            <p>
-              {company.copyright ||
-                '© 2026 ZestBotz Solutions. All rights reserved.'}
-            </p>
-
-            <span className="hidden h-5 w-px bg-[#1a1a2e] sm:mx-4 sm:block" />
-
-            <p>
-              {company.city && company.region
-                ? `${company.city}, ${company.region}`
-                : company.locationFull}
-              {company.phone && ` | ${company.phone}`}
+        <div className="mt-14 border-t border-white/10 pt-6">
+          <div className="flex flex-col gap-3 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between">
+            <p>{company.copyright}</p>
+            <p className="flex items-center gap-2">
+              <span>{company.locationFull}</span>
+              <span>·</span>
+              <a href={company.phoneHref} className="hover:text-white transition">
+                {company.phone}
+              </a>
+              <span>·</span>
+              <a href={`mailto:${company.email}`} className="hover:text-white transition">
+                {company.email}
+              </a>
             </p>
           </div>
         </div>

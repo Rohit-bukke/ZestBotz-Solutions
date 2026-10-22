@@ -4,18 +4,20 @@ import { Navbar } from '../components/Navbar'
 
 export function MainLayout() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col overflow-x-hidden bg-white">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-ink"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:border focus:border-[#FF631C] focus:bg-white focus:px-4 focus:py-2.5 focus:text-[#0B0B0D] focus:shadow-lg focus:outline-none"
       >
-        Skip to content
+        Skip to main content
       </a>
       <Navbar />
-      <main id="main-content" className="pt-20">
+      <div id="main-content" className="pt-20 flex-1">
         <Outlet />
-      </main>
+      </div>
       <Footer />
     </div>
   )
 }
+
+export default MainLayout

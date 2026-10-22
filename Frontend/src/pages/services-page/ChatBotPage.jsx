@@ -213,7 +213,7 @@ function SectionHeading({
         </p>
       )}
 
-      <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
+      <h2 className="text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
         {title}
       </h2>
 
@@ -361,7 +361,7 @@ export function ChatBotPage() {
               CHATBOT INTEGRATION
             </div>
 
-            <h1 className="mt-7 max-w-2xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
+            <h1 className="mt-7 max-w-2xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
               Better conversations.
               <span className="relative mt-1 inline-block text-[#E8590C]">
                 {' '}More helpful experiences.
@@ -451,7 +451,7 @@ export function ChatBotPage() {
                   <ChatIcon name={item.icon} />
                 </div>
 
-                <span className="font-serif text-lg text-[#E8590C]/50">
+                <span className="text-lg text-[#E8590C]/50">
                   {item.number}
                 </span>
               </div>
@@ -494,7 +494,7 @@ export function ChatBotPage() {
                   />
                 )}
 
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-[#E8590C]/30 bg-white font-serif text-sm font-semibold text-[#E8590C]">
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-[#E8590C]/30 bg-white text-sm font-semibold text-[#E8590C]">
                   {step.number}
                 </div>
 
@@ -596,7 +596,7 @@ export function ChatBotPage() {
               Let's get started
             </p>
 
-            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               Ready to make conversations more helpful?
             </h2>
 

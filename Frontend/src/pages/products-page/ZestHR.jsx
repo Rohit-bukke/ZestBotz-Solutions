@@ -507,7 +507,7 @@ export function ZestHR() {
           <div>
             <SectionLabel>Human Resources · Product Concept</SectionLabel>
 
-            <h1 className="max-w-3xl font-serif text-4xl leading-[1.12] tracking-tight text-[#171717] sm:text-5xl lg:text-[62px]">
+            <h1 className="max-w-3xl text-4xl leading-[1.12] tracking-tight text-[#171717] sm:text-5xl lg:text-[62px]">
               Your people.
               <br />
               Your processes.
