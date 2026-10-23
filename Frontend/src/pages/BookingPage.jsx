@@ -818,7 +818,7 @@ export default function BookingPage() {
 
                     <label htmlFor="name" className="mb-2 block text-sm font-medium">
 
-                      Full name \*
+                      Full name *
 
                     </label>
 
@@ -852,7 +852,7 @@ export default function BookingPage() {
 
                     <label htmlFor="email" className="mb-2 block text-sm font-medium">
 
-                      Work email \*
+                      Work email *
 
                     </label>
 

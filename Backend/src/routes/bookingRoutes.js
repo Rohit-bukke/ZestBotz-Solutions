@@ -7,6 +7,7 @@ import {
   getZohoEvents,
   zohoCalendarRequest,
 } from '../config/zohoCalendar.js'
+import transporter from '../config/mailer.js'
 
 const router = Router()
 
@@ -46,7 +47,7 @@ const SERVICES = [
 const DEFAULT_TIMEZONE = 'Asia/Kolkata'
 const SLOT_MINUTES = 30
 const START_HOUR = 9
-const END_HOUR = 17
+const END_HOUR = 22
 
 function validDate(value, timezone) {
   const parsed = DateTime.fromISO(value, { zone: timezone })
@@ -374,6 +375,7 @@ router.post('/', bookingLimiter, async (req, res) => {
 
     const meetLink = extractMeetingLink(event)
 
+    
     if (!meetLink) {
       return res.status(202).json({
         success: false,
@@ -386,6 +388,31 @@ router.post('/', bookingLimiter, async (req, res) => {
         },
       })
     }
+
+
+    const recipients = [
+  email.trim(),
+  process.env.TEAM_EMAIL,
+  'support@zestbotz.com',
+].filter(Boolean)
+
+await transporter.sendMail({
+  from: process.env.EMAIL_USER,
+  to: recipients,
+  subject: `Booking Confirmation: ${service}`,
+  text: `
+Booking confirmed!
+
+Name: ${name.trim()}
+Email: ${email.trim()}
+Company: ${company.trim() || 'Not provided'}
+Service: ${service}
+Date: ${date}
+Time: ${start.toFormat('h:mm a')} (IST)
+Meeting link: ${meetLink}
+Message: ${message.trim() || 'Not provided'}
+  `,
+})
 
     return res.status(201).json({
       success: true,
