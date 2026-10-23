@@ -14,9 +14,9 @@ const serviceLinks = [
 ]
 
 const productLinks = [
-  ['SchoolOS (Planned SaaS)', '/products/zestSchool'],
-  ['ZestRCM Analytics (Prototype)', '/products/zestRCM'],
-  ['ZestHR (Concept)', '/products/zestHR'],
+  ['SchoolOS', '/products/zestSchool'],
+  ['ZestRCM Analytics', '/products/zestRCM'],
+  ['ZestHR', '/products/zestHR'],
 ]
 
 const workLinks = [
@@ -150,11 +150,11 @@ export function Navbar() {
           <img
             src={logo}
             alt="ZestBotz Solutions Logo"
-            className="block h-10 w-auto object-contain"
+            className="block h-12 w-auto object-contain"
           />
-          <span className="text-xl font-bold tracking-tight text-[#0B0B0D]">
+          {/* <span className="text-xl font-bold tracking-tight text-[#0B0B0D]">
             Zest<span className="text-[#FF631C]">Botz</span>
-          </span>
+          </span> */}
         </Link>
 
         {/* Desktop navigation */}
