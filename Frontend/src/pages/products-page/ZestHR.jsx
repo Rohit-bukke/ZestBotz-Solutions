@@ -211,7 +211,7 @@ const faqs = [
 
 function SectionLabel({ children }) {
   return (
-    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-200/80 bg-orange-50 px-3 py-1.5 text-sm font-medium text-orange-700">
+    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-200/80 bg-orange-50 px-3 py-1.5 text-sm font-medium text-orange-700 dark:border-[#FF631C]/30 dark:bg-[#FF631C]/10 dark:text-[#FF8B57]">
       <span className="h-1.5 w-1.5 rounded-full bg-[#FF631C]" />
       {children}
     </div>
@@ -234,12 +234,12 @@ function SectionHeading({
     >
       {eyebrow && <SectionLabel>{eyebrow}</SectionLabel>}
 
-      <h2 className="text-3xl font-semibold tracking-tight text-[#202020] sm:text-4xl lg:text-[42px] lg:leading-[1.15]">
+      <h2 className="text-3xl font-semibold tracking-tight text-[#202020] dark:text-white sm:text-4xl lg:text-[42px] lg:leading-[1.15]">
         {title}
       </h2>
 
       {description && (
-        <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
+        <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300 sm:text-lg">
           {description}
         </p>
       )}
@@ -323,21 +323,21 @@ function ProductWorkflowPreview() {
     <div className="relative mx-auto w-full max-w-[620px]">
       <div className="pointer-events-none absolute -inset-5 rounded-[36px] bg-gradient-to-br from-orange-100/80 via-orange-50/50 to-transparent blur-2xl" />
 
-      <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_24px_80px_-36px_rgba(100,65,35,0.28)]">
-        <div className="flex items-center justify-between gap-3 border-b border-gray-100 px-4 py-4 sm:px-6">
+      <div className="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#141417] shadow-[0_24px_80px_-36px_rgba(100,65,35,0.28)]">
+        <div className="flex items-center justify-between gap-3 border-b border-gray-100 dark:border-white/10 px-4 py-4 sm:px-6">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 text-[#E95617]">
               <Users size={20} />
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-900">ZestHR</p>
-              <p className="mt-1 text-xs text-gray-500">
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">ZestHR</p>
+              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                 HR workspace concept
               </p>
             </div>
           </div>
 
-          <span className="rounded-full border border-orange-100 bg-orange-50 px-3 py-1.5 text-xs font-medium text-orange-700">
+          <span className="rounded-full border border-orange-100 dark:border-[#FF631C]/30 bg-orange-50 dark:bg-[#FF631C]/10 px-3 py-1.5 text-xs font-medium text-orange-700 dark:text-[#FF8B57]">
             Concept preview
           </span>
         </div>
@@ -347,16 +347,16 @@ function ProductWorkflowPreview() {
             Proposed workspace
           </p>
 
-          <h3 className="mt-2 text-xl font-semibold text-gray-900">
+          <h3 className="mt-2 text-xl font-semibold text-gray-900 dark:text-white">
             Organize everyday HR operations
           </h3>
 
-          <p className="mt-2 text-sm leading-6 text-gray-500">
+          <p className="mt-2 text-sm leading-6 text-gray-500 dark:text-gray-400">
             Explore how the proposed areas could be organized without
             representing live employee data or implemented functionality.
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-2 border-b border-gray-100 pb-4">
+          <div className="mt-5 flex flex-wrap gap-2 border-b border-gray-100 dark:border-white/10 pb-4">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -365,8 +365,8 @@ function ProductWorkflowPreview() {
                 aria-pressed={activeTab === tab}
                 className={`rounded-lg px-3 py-2 text-xs font-medium transition ${
                   activeTab === tab
-                    ? 'bg-orange-100 text-orange-800'
-                    : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+                    ? 'bg-orange-100 text-orange-800 dark:bg-[#FF631C] dark:text-white'
+                    : 'bg-gray-50 text-gray-600 hover:bg-gray-100 dark:bg-white/5 dark:text-gray-300 dark:hover:bg-white/10'
                 }`}
               >
                 {tab}
@@ -381,10 +381,10 @@ function ProductWorkflowPreview() {
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
                   {selected.title}
                 </h4>
-                <p className="mt-1 text-xs leading-5 text-gray-500">
+                <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400">
                   {selected.description}
                 </p>
               </div>
@@ -394,17 +394,17 @@ function ProductWorkflowPreview() {
               {selected.items.map(([title, description], index) => (
                 <div
                   key={title}
-                  className="flex items-start gap-3 rounded-xl border border-gray-100 p-3 sm:p-4"
+                  className="flex items-start gap-3 rounded-xl border border-gray-100 dark:border-white/10 p-3 sm:p-4 bg-white dark:bg-[#16161A]"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-50 text-sm font-semibold text-orange-700">
                     {String(index + 1).padStart(2, '0')}
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-gray-800">
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
                       {title}
                     </p>
-                    <p className="mt-1 text-xs leading-5 text-gray-500">
+                    <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400">
                       {description}
                     </p>
                   </div>
@@ -419,8 +419,8 @@ function ProductWorkflowPreview() {
           </div>
         </div>
 
-        <div className="border-t border-gray-100 bg-gray-50 px-4 py-3 sm:px-6">
-          <p className="text-xs leading-5 text-gray-500">
+        <div className="border-t border-gray-100 dark:border-white/10 bg-gray-50 dark:bg-[#0E0E11] px-4 py-3 sm:px-6">
+          <p className="text-xs leading-5 text-gray-500 dark:text-gray-400">
             Conceptual workflow only. No live employee records, operational
             metrics, connected HR database, or active workflows are shown.
           </p>
@@ -432,14 +432,14 @@ function ProductWorkflowPreview() {
 
 function FAQItem({ question, answer, open, onClick }) {
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-gray-200 dark:border-white/10">
       <button
         type="button"
         onClick={onClick}
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="text-sm font-semibold text-[#202020] sm:text-base">
+        <span className="text-sm font-semibold text-[#202020] dark:text-white sm:text-base">
           {question}
         </span>
 
@@ -452,7 +452,7 @@ function FAQItem({ question, answer, open, onClick }) {
       </button>
 
       {open && (
-        <p className="max-w-3xl pb-5 text-sm leading-7 text-gray-600">
+        <p className="max-w-3xl pb-5 text-sm leading-7 text-gray-600 dark:text-gray-300">
           {answer}
         </p>
       )}
@@ -492,7 +492,7 @@ export function ZestHR() {
   }, [])
 
   return (
-    <main className="overflow-hidden bg-white text-[#171717]">
+    <main className="overflow-hidden bg-white dark:bg-[#0B0B0D] text-[#171717] dark:text-gray-100">
       {/* Hero */}
       <section className="relative isolate overflow-hidden px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32">
         <div
@@ -507,15 +507,15 @@ export function ZestHR() {
           <div>
             <SectionLabel>Human Resources · Product Concept</SectionLabel>
 
-            <h1 className="max-w-3xl text-4xl leading-[1.12] tracking-tight text-[#171717] sm:text-5xl lg:text-[62px]">
+            <h1 className="max-w-3xl text-4xl leading-[1.12] tracking-tight text-[#171717] dark:text-white sm:text-5xl lg:text-[62px]">
               Your people.
               <br />
               Your processes.
               <br />
-              <span className="text-[#E8590C]">One smarter HR platform.</span>
+              <span className="text-[#E8590C] dark:text-[#FF631C]">One smarter HR platform.</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-[#555555] sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-8 text-[#555555] dark:text-gray-300 sm:text-lg">
               Simplify employee management, organize everyday HR operations,
               and explore a more structured approach to managing your team
               with ZestHR.
@@ -526,7 +526,7 @@ export function ZestHR() {
 
               <a
                 href="#features"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3.5 text-sm font-semibold text-gray-700 transition hover:border-orange-200 hover:bg-orange-50"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-gray-200 dark:border-white/15 bg-white dark:bg-[#16161A] px-6 py-3.5 text-sm font-semibold text-gray-700 dark:text-gray-200 transition hover:border-orange-200 dark:hover:border-[#FF631C] hover:bg-orange-50 dark:hover:bg-[#FF631C]/10"
               >
                 Explore features
                 <ArrowDownRight size={16} />

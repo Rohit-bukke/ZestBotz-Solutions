@@ -201,7 +201,6 @@ export function Careers() {
               className="inline-flex items-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c94b08]"
             >
               Explore career areas
-              <span aria-hidden="true">↘</span>
             </a>
 
             <button

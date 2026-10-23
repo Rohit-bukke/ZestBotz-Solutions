@@ -55,16 +55,16 @@ function HeroWorkflowVisual() {
     <div className="relative mx-auto w-full max-w-[520px]">
       <div className="absolute inset-8 rounded-full bg-[#FF631C]/15 blur-3xl" />
 
-      <div className="relative rounded-[28px] border border-black/[0.08] bg-white/90 p-6 sm:p-8 shadow-[0_25px_80px_rgba(11,11,13,0.08)] backdrop-blur">
+      <div className="relative rounded-[28px] border border-black/[0.08] dark:border-white/10 bg-white/90 dark:bg-[#141417] p-6 sm:p-8 shadow-[0_25px_80px_rgba(11,11,13,0.08)] backdrop-blur">
         <div className="flex items-start justify-between border-b border-black/[0.06] pb-5">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#FF631C]">
               Operational Framework
             </p>
-            <h3 className="mt-1 text-2xl font-semibold tracking-tight text-[#0B0B0D]">
+            <h3 className="mt-1 text-2xl font-semibold tracking-tight text-[#0B0B0D] dark:text-white">
               Practical Engineering
             </h3>
-            <p className="mt-1 text-xs text-gray-500">
+            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
               Bridging AI Capabilities with Business Operations
             </p>
           </div>
@@ -78,14 +78,14 @@ function HeroWorkflowVisual() {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="flex items-start gap-3.5 rounded-2xl border border-black/[0.06] bg-[#FAFAFA] p-4 transition hover:border-[#FF631C]/40 hover:bg-white"
+              className="flex items-start gap-3.5 rounded-2xl border border-black/[0.06] dark:border-white/10 bg-[#FAFAFA] dark:bg-[#18181D] p-4 transition hover:border-[#FF631C]/40 hover:bg-white dark:hover:bg-[#1E1E24]"
             >
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FF631C]/10 text-xs font-bold text-[#FF631C]">
                 {step.number}
               </span>
               <div>
-                <p className="text-sm font-semibold text-gray-900">{step.title}</p>
-                <p className="mt-0.5 text-xs text-gray-600 leading-relaxed">{step.desc}</p>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">{step.title}</p>
+                <p className="mt-0.5 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{step.desc}</p>
               </div>
             </div>
           ))}
@@ -96,9 +96,9 @@ function HeroWorkflowVisual() {
             <p className="text-[11px] text-gray-400">Positioning</p>
             <p className="mt-1 text-xs font-semibold">Practical Technology Partner</p>
           </div>
-          <div className="rounded-xl border border-black/[0.07] bg-gray-50 p-3.5">
+          <div className="rounded-xl border border-black/[0.07] dark:border-white/10 bg-gray-50 dark:bg-[#18181D] p-3.5">
             <p className="text-[11px] text-gray-500">Core Approach</p>
-            <p className="mt-1 text-xs font-semibold text-gray-900">Deterministic & Validated</p>
+            <p className="mt-1 text-xs font-semibold text-gray-900 dark:text-white">Deterministic & Validated</p>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ export function Home() {
   }, [])
 
   return (
-    <main className="overflow-hidden bg-white text-[#0B0B0D]">
+    <main className="overflow-hidden bg-white dark:bg-[#0B0B0D] text-[#0B0B0D] dark:text-gray-100">
       {/* HERO SECTION */}
       <section
         className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
@@ -124,18 +124,18 @@ export function Home() {
       >
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#FF631C]/25 bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FF631C]">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#FF631C]/25 bg-white/85 dark:bg-white/10 dark:border-[#FF631C]/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FF631C]">
               <span className="h-2 w-2 rounded-full bg-[#FF631C]" />
               {company.positioning}
             </div>
 
-            <h1 className="max-w-3xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[60px] text-[#0B0B0D]">
+            <h1 className="max-w-3xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[60px] text-[#0B0B0D] dark:text-white">
               Transforming workflows with{' '}
               <span className="text-[#FF631C]">AI-driven automation</span> and
               analytics.
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-gray-600 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-8 text-gray-600 dark:text-gray-300 sm:text-lg">
               ZestBotz is a practical technology solutions venture. We help businesses automate repetitive manual work, connect fragmented data, and improve operational visibility through custom software, data engineering, and validated analytics.
             </p>
 
@@ -150,14 +150,14 @@ export function Home() {
 
               <Link
                 to="/book-a-call"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-black/15 bg-white/80 px-7 py-3.5 text-sm font-semibold text-[#0B0B0D] hover:border-[#FF631C] hover:text-[#FF631C] transition"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-black/15 dark:border-white/15 bg-white/80 dark:bg-white/10 px-7 py-3.5 text-sm font-semibold text-[#0B0B0D] dark:text-white hover:border-[#FF631C] hover:text-[#FF631C] transition"
               >
                 Book Discovery Consultation
                 <ArrowIcon />
               </Link>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs sm:text-sm text-gray-600 border-t border-black/[0.08] pt-6">
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 border-t border-black/[0.08] dark:border-white/10 pt-6">
               <span className="inline-flex items-center gap-2 font-medium">
                 <CheckIcon />
                 Automate Work
@@ -178,14 +178,14 @@ export function Home() {
       </section>
 
       {/* THREE CENTRAL PROMISES */}
-      <section className="border-y border-black/[0.06] bg-white py-16 sm:py-20">
+      <section className="border-y border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#0B0B0D] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="max-w-2xl">
             <SectionLabel>Our Core Value Proposition</SectionLabel>
-            <h2 className="text-3xl font-semibold sm:text-4xl text-[#0B0B0D]">
+            <h2 className="text-3xl font-semibold sm:text-4xl text-[#0B0B0D] dark:text-white">
               Three clear promises for your operations.
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-gray-600">
+            <p className="mt-3 text-sm sm:text-base text-gray-600 dark:text-gray-300">
               We communicate ZestBotz as a practical technology partner that understands business workflows, rather than a generic AI agency or software development shop.
             </p>
           </div>
@@ -194,11 +194,11 @@ export function Home() {
             {company.promises.map((p, idx) => (
               <div
                 key={p.title}
-                className="relative rounded-2xl border border-black/[0.08] bg-[#FAFAFA] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#FF631C]/40 hover:bg-white hover:shadow-lg hover:shadow-black/[0.04]"
+                className="relative rounded-2xl border border-black/[0.08] dark:border-white/10 bg-[#FAFAFA] dark:bg-[#141417] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#FF631C]/40 hover:bg-white dark:hover:bg-[#1A1A20] hover:shadow-lg"
               >
                 <span className="text-xs font-bold text-[#FF631C]">PROMISE 0{idx + 1}</span>
-                <h3 className="mt-3 text-2xl font-semibold text-gray-900">{p.title}</h3>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">{p.description}</p>
+                <h3 className="mt-3 text-2xl font-semibold text-gray-900 dark:text-white">{p.title}</h3>
+                <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{p.description}</p>
               </div>
             ))}
           </div>
@@ -206,7 +206,7 @@ export function Home() {
       </section>
 
       {/* 8 OFFICIAL SERVICES OVERVIEW */}
-      <section id="services" className="scroll-mt-24 bg-[#F9F9FA] py-20 sm:py-24">
+      <section id="services" className="scroll-mt-24 bg-[#F9F9FA] dark:bg-[#0E0E11] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
@@ -232,7 +232,7 @@ export function Home() {
             {servicesList.map((service) => (
               <article
                 key={service.id}
-                className="group flex flex-col justify-between rounded-2xl border border-black/[0.08] bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#FF631C]/40 hover:shadow-lg hover:shadow-orange-500/5"
+                className="group flex flex-col justify-between rounded-2xl border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#141417] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#FF631C]/40 dark:hover:border-[#FF631C]/40 hover:shadow-lg"
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-black/[0.05]">
@@ -244,11 +244,11 @@ export function Home() {
                     </span>
                   </div>
 
-                  <h3 className="mt-4 text-xl font-semibold leading-snug text-gray-900 group-hover:text-[#FF631C] transition-colors">
+                  <h3 className="mt-4 text-xl font-semibold leading-snug text-gray-900 dark:text-white group-hover:text-[#FF631C] transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                     {service.summary}
                   </p>
                 </div>
@@ -269,7 +269,7 @@ export function Home() {
       </section>
 
       {/* TARGET INDUSTRIES OVERVIEW */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white dark:bg-[#0B0B0D] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="max-w-2xl">
             <SectionLabel>Target Industries</SectionLabel>
@@ -285,16 +285,16 @@ export function Home() {
             {targetIndustries.map((ind) => (
               <div
                 key={ind.id}
-                className="rounded-2xl border border-black/[0.08] bg-[#FAFAFA] p-6 sm:p-7 transition hover:border-[#FF631C]/40 hover:bg-white"
+                className="rounded-2xl border border-black/[0.08] dark:border-white/10 bg-[#FAFAFA] dark:bg-[#141417] p-6 sm:p-7 transition hover:border-[#FF631C]/40 hover:bg-white dark:hover:bg-[#1A1A20]"
               >
                 <span className="text-xs font-bold text-[#FF631C]">{ind.number}</span>
-                <h3 className="mt-2 text-xl font-semibold text-gray-900">{ind.name}</h3>
-                <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">{ind.summary}</p>
+                <h3 className="mt-2 text-xl font-semibold text-gray-900 dark:text-white">{ind.name}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{ind.summary}</p>
                 <div className="mt-4 border-t border-black/[0.06] pt-3">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">Key Solutions:</p>
                   <ul className="mt-1.5 space-y-1">
                     {ind.solutions.slice(0, 2).map((s) => (
-                      <li key={s} className="text-xs text-gray-700 flex items-center gap-1.5">
+                      <li key={s} className="text-xs text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
                         <span className="h-1 w-1 rounded-full bg-[#FF631C]" />
                         {s}
                       </li>
@@ -318,7 +318,7 @@ export function Home() {
       </section>
 
       {/* PRODUCT PORTFOLIO — ACCURATE STATUS */}
-      <section className="bg-[#F9F9FA] py-20 sm:py-24 border-t border-black/[0.06]">
+      <section className="bg-[#F9F9FA] dark:bg-[#0E0E11] py-20 sm:py-24 border-t border-black/[0.06] dark:border-white/10">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="max-w-2xl">
             <SectionLabel>Product Portfolio</SectionLabel>
@@ -334,17 +334,17 @@ export function Home() {
             {productList.map((prod) => (
               <div
                 key={prod.id}
-                className="flex flex-col justify-between rounded-2xl border border-black/[0.08] bg-white p-7 transition hover:shadow-md"
+                className="flex flex-col justify-between rounded-2xl border border-black/[0.08] dark:border-white/10 bg-white dark:bg-[#141417] p-7 transition hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-black/[0.06]">
-                    <span className="rounded-full bg-gray-100 px-3 py-1 text-[11px] font-semibold text-gray-800">
+                    <span className="rounded-full bg-gray-100 dark:bg-white/10 px-3 py-1 text-[11px] font-semibold text-gray-800 dark:text-gray-200">
                       {prod.statusBadge}
                     </span>
                     <span className="text-xs text-gray-400">Status Verified</span>
                   </div>
 
-                  <h3 className="mt-4 text-2xl font-semibold text-gray-900">{prod.name}</h3>
+                  <h3 className="mt-4 text-2xl font-semibold text-gray-900 dark:text-white">{prod.name}</h3>
                   <p className="mt-1 text-xs font-semibold text-[#FF631C]">{prod.category}</p>
                   <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">{prod.description}</p>
                 </div>

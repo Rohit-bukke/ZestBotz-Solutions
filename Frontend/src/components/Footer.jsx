@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { company, servicesList } from '../data/company.js'
 import logo from '../assets/logo.png'
+import logoWhite from '../assets/logo-white.png'
 
 const companyLinks = [
   ['About ZestBotz', '/about'],
@@ -86,11 +87,13 @@ export function Footer() {
               <img
                 src={logo}
                 alt="ZestBotz Logo"
-                className="block h-12 w-auto object-contain"
+                className="relative -left-3 block dark:hidden h-12 w-auto object-contain"
               />
-              <span className="text-2xl font-bold tracking-tight text-[#0B0B0D]">
-                Zest<span className="text-[#FF631C]">Botz</span>
-              </span>
+              <img
+                src={logoWhite}
+                alt="ZestBotz Logo"
+                className="relative -left-3 hidden dark:block h-12 w-auto object-contain"
+              />
             </Link>
 
             <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-[#FF631C]">
