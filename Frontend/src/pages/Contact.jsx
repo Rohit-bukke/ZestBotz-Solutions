@@ -5,8 +5,8 @@ import { School, Sparkles, CheckCircle2 } from 'lucide-react'
 
 const interests = [
   'SchoolOS (School Operations Platform)',
-  'ZestRCM (Healthcare RCM)',
   'ZestHR (Human Resources)',
+  'ZestRCM (Healthcare RCM)',
   'AI & Agentic AI',
   'Process & Workflow Automation',
   'Web Scraping & Data Solutions',

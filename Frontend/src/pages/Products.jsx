@@ -14,28 +14,10 @@ import {
   School,
 } from 'lucide-react'
 
+// Product Suite Order strictly per requirements: 1. SchoolOS, 2. ZestHR, 3. ZestRCM
 const products = [
   {
     number: '01',
-    name: 'ZestRCM Analytics',
-    route: '/products/zestRCM',
-    status: 'Prototype / In Development',
-    statusBadge: 'Working Prototype',
-    category: 'Healthcare Technology & Revenue Operations',
-    tagline: 'Operational visibility for healthcare revenue cycle workflows.',
-    description:
-      'An RCM analytics prototype designed for healthcare billing agencies, independent clinics, and revenue operations teams. Focuses on claims status tracking, denial categorization, AR aging, and payment trend models without exposing confidential patient health information.',
-    features: [
-      'Claims, payments, and adjustment reporting models',
-      'Denial category breakdown and root-cause indicators',
-      'Accounts receivable aging trends and missing-data alerts',
-      'Automated reconciliation models for posted remittances',
-    ],
-    accent: '#FF631C',
-    symbol: '✚',
-  },
-  {
-    number: '02',
     name: 'SchoolOS',
     route: '/products/zestSchool',
     isFlagship: true,
@@ -59,7 +41,7 @@ const products = [
     deployedUrl: DEFAULT_SCHOOLOS_DEPLOYED_URL,
   },
   {
-    number: '03',
+    number: '02',
     name: 'ZestHR',
     route: '/products/zestHR',
     status: 'Product-Page Concept',
@@ -76,6 +58,25 @@ const products = [
     ],
     accent: '#7C3AED',
     symbol: '◎',
+  },
+  {
+    number: '03',
+    name: 'ZestRCM Analytics',
+    route: '/products/zestRCM',
+    status: 'Prototype / In Development',
+    statusBadge: 'Working Prototype',
+    category: 'Healthcare Technology & Revenue Operations',
+    tagline: 'Operational visibility for healthcare revenue cycle workflows.',
+    description:
+      'An RCM analytics prototype designed for healthcare billing agencies, independent clinics, and revenue operations teams. Focuses on claims status tracking, denial categorization, AR aging, and payment trend models without exposing confidential patient health information.',
+    features: [
+      'Claims, payments, and adjustment reporting models',
+      'Denial category breakdown and root-cause indicators',
+      'Accounts receivable aging trends and missing-data alerts',
+      'Automated reconciliation models for posted remittances',
+    ],
+    accent: '#FF631C',
+    symbol: '✚',
   },
 ]
 
@@ -114,7 +115,7 @@ export function Products() {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+        className="relative overflow-hidden px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28"
         style={{
           backgroundImage:
             'radial-gradient(ellipse at 8% 12%, rgba(255,99,28,0.14), transparent 38%), radial-gradient(ellipse at 95% 75%, rgba(37,99,235,0.12), transparent 35%)',
@@ -123,7 +124,7 @@ export function Products() {
         <div className="mx-auto max-w-7xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-semibold uppercase tracking-wider text-[#FF631C]">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Product Portfolio · Status Verified</span>
+            <span>Product Portfolio</span>
           </div>
 
           <h1 className="mt-5 max-w-4xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
@@ -132,7 +133,7 @@ export function Products() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-gray-600 sm:text-lg">
-            Explore the ZestBotz product portfolio across healthcare operations, school administration, and human resources. Every product is presented according to its verified implementation status.
+            Explore the ZestBotz product portfolio across school administration, human resources, and healthcare operations. Every product is presented according to its verified implementation status.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -143,21 +144,13 @@ export function Products() {
               Explore Products
               <ArrowRight className="w-4 h-4" />
             </a>
-
-            {/* <button
-              onClick={() => openSchoolOSModal('overview')}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-6 py-3.5 text-sm font-semibold text-blue-700 hover:bg-blue-100 transition shadow-sm"
-            >
-              <School className="w-4 h-4 text-blue-600" />
-              <span>Explore SchoolOS Prototype</span>
-            </button> */}
           </div>
 
           <div className="mt-12 grid max-w-3xl grid-cols-3 gap-4 border-t border-black/10 pt-6">
             {[
-              ['01', 'ZestRCM Analytics', 'Prototype in Development'],
-              ['02', 'SchoolOS Platform', 'Planned SaaS Roadmap'],
-              ['03', 'ZestHR Concept', 'Product-Page Concept'],
+              ['01', 'SchoolOS Platform', 'Planned SaaS Roadmap'],
+              ['02', 'ZestHR Concept', 'Product-Page Concept'],
+              ['03', 'ZestRCM Analytics', 'Prototype in Development'],
             ].map(([number, label, status]) => (
               <div key={number}>
                 <p className="text-xl text-[#FF631C] sm:text-2xl font-bold">
@@ -178,7 +171,7 @@ export function Products() {
       {/* Product list */}
       <section
         id="product-list"
-        className="scroll-mt-20 px-5 py-20 sm:px-8 lg:px-12 bg-[#F9F9FA]"
+        className="scroll-mt-20 px-6 py-20 sm:px-8 lg:px-10 bg-[#F9F9FA]"
       >
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
@@ -201,38 +194,29 @@ export function Products() {
                 <article
                   key={product.name}
                   id={product.name.toLowerCase()}
-                  className={`group overflow-hidden rounded-3xl border transition duration-300 ${
-                    isSchoolOS
-                      ? 'border-blue-200 bg-white shadow-xl shadow-blue-500/[0.04]'
-                      : 'border-black/[0.08] bg-white hover:border-[#FF631C]/30 hover:shadow-xl hover:shadow-black/[0.04]'
-                  }`}
+                  className="group overflow-hidden rounded-3xl border border-black/[0.08] bg-white transition duration-300 hover:border-black/15 hover:shadow-xl hover:shadow-black/[0.04]"
                 >
                   <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
-                    {/* Identity Column */}
+                    {/* Identity panel */}
                     <div
-                      className="relative flex min-h-[300px] flex-col justify-between overflow-hidden p-7 sm:p-9 lg:min-h-[420px]"
+                      className="relative flex min-h-[300px] flex-col justify-between overflow-hidden p-7 sm:p-10 lg:min-h-[420px]"
                       style={{
-                        backgroundImage: isSchoolOS
-                          ? `radial-gradient(ellipse at 85% 15%, rgba(37,99,28,0.18), transparent 50%), linear-gradient(135deg, #F0F6FE, #EBF3FF)`
-                          : `radial-gradient(ellipse at 85% 15%, ${product.accent}20, transparent 48%), linear-gradient(135deg, #FAFAFA, #F4F4F4)`,
+                        backgroundImage: `radial-gradient(ellipse at 85% 15%, ${product.accent}24, transparent 48%), linear-gradient(135deg, #FAFAFA, #F4F4F4)`,
                       }}
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-gray-600">
+                        <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#FF631C]">
                           Product {product.number}
                         </span>
 
                         <div className="flex items-center gap-1.5 flex-wrap justify-end">
-                          <span
-                            className="rounded-full px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm"
-                            style={{ backgroundColor: product.accent }}
-                          >
+                          <span className="rounded-full bg-white/90 border border-black/10 px-2.5 py-0.5 text-[11px] font-semibold text-gray-700 shadow-xs">
                             {product.statusBadge}
                           </span>
                         </div>
                       </div>
 
-                      <div className="relative mt-6">
+                      <div className="relative mt-8">
                         <div
                           className="flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-white shadow-md"
                           style={{ backgroundColor: product.accent }}
@@ -241,15 +225,15 @@ export function Products() {
                           {product.symbol}
                         </div>
 
-                        <h3 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl text-gray-900">
+                        <h3 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
                           {product.name}
                         </h3>
 
-                        <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                        <p className="mt-2 text-xs font-medium text-gray-500 uppercase tracking-wider">
                           {product.category}
                         </p>
 
-                        <p className="mt-3 text-sm text-gray-700 font-medium leading-relaxed">
+                        <p className="mt-3 max-w-sm text-sm leading-6 text-gray-700 font-medium">
                           {product.tagline}
                         </p>
 
@@ -259,38 +243,42 @@ export function Products() {
                               <MessageSquare className="w-3 h-3 text-blue-600" /> WhatsApp Alerts
                             </span>
                             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-100 text-emerald-800">
-                              <ShieldCheck className="w-3 h-3 text-emerald-600" /> Gate Pass Verification
+                              <ShieldCheck className="w-3 h-3 text-emerald-600" /> Gate Pass Safety
                             </span>
                             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-purple-100 text-purple-800">
-                              <Lock className="w-3 h-3 text-purple-600" /> Multi-Tenant Scoping
+                              <Lock className="w-3 h-3 text-purple-600" /> Multi-Tenant
                             </span>
                           </div>
                         )}
                       </div>
 
-                      <div className="mt-6 pt-4 border-t border-black/[0.08]">
-                        <p className="text-xs text-gray-500">
-                          Status: <strong className="text-gray-900">{product.status}</strong>
-                        </p>
-                      </div>
+                      <div
+                        className="pointer-events-none absolute -bottom-20 -right-12 h-56 w-56 rounded-full border-[35px] opacity-15 transition duration-500 group-hover:scale-110"
+                        style={{ borderColor: product.accent }}
+                      />
                     </div>
 
-                    {/* Details Column */}
-                    <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10">
+                    {/* Details panel */}
+                    <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-12 bg-white">
                       <div>
-                        <p className="text-sm leading-7 text-gray-600 sm:text-base">
+                        <div className="inline-flex items-center gap-2 rounded-md bg-amber-50 border border-amber-200/80 px-2.5 py-1 text-[11.5px] font-medium text-amber-900">
+                          <span className="h-1.5 w-1.5 rounded-full bg-amber-600" />
+                          <span>Status: {product.status}</span>
+                        </div>
+
+                        <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base">
                           {product.description}
                         </p>
 
-                        <h4 className="mt-6 text-xs font-semibold uppercase tracking-wider text-gray-400">
-                          Solution Capabilities & Highlights
+                        <h4 className="mt-6 text-xs font-bold uppercase tracking-wider text-gray-900">
+                          Architecture & Planned Highlights
                         </h4>
 
                         <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
                           {product.features.map((feature) => (
                             <div
                               key={feature}
-                              className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
+                              className="flex items-start gap-2 text-xs sm:text-sm leading-5 text-gray-600"
                             >
                               <span
                                 className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
@@ -302,26 +290,46 @@ export function Products() {
                         </div>
                       </div>
 
-                      {/* Actions */}
-                      <div className="mt-8 pt-5 border-t border-black/[0.08] flex flex-wrap items-center justify-between gap-3">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <Link
-                            to={product.route}
-                            className="inline-flex items-center gap-2 rounded-xl bg-[#0B0B0D] px-5 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-[#FF631C] transition"
-                          >
-                            <span>View Full Specification</span>
-                            <ArrowRight className="w-3.5 h-3.5" />
-                          </Link>
+                      {/* Action buttons */}
+                      <div className="mt-8 border-t border-black/[0.08] pt-6 flex flex-wrap items-center gap-3 justify-between">
+                        {isSchoolOS ? (
+                          <div className="flex flex-wrap items-center gap-2.5">
+                            <button
+                              type="button"
+                              onClick={() => openSchoolOSModal('overview')}
+                              className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white transition hover:bg-blue-500 shadow-xs"
+                            >
+                              <Sparkles className="w-3.5 h-3.5" />
+                              <span>Explore Prototype Overview</span>
+                            </button>
 
                             <Link
-                              to={`/contact?interest=${encodeURIComponent(product.name)}`}
-                              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-700 hover:text-[#FF631C] transition"
+                              to={product.route}
+                              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gray-700 hover:text-[#FF631C] px-3 py-2 transition"
                             >
-                              <span>Enquire about {product.name}</span>
+                              <span>View Product Details</span>
                               <ArrowRight className="w-3.5 h-3.5" />
                             </Link>
-                          
-                        </div>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-4">
+                            <Link
+                              to={product.route}
+                              className="inline-flex items-center gap-2 rounded-xl bg-[#0B0B0D] px-4 py-2.5 text-xs sm:text-sm font-semibold text-white transition hover:bg-[#FF631C]"
+                            >
+                              <span>View Dedicated Page</span>
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </Link>
+                          </div>
+                        )}
+
+                        <Link
+                          to={`/contact?interest=${encodeURIComponent(product.name)}`}
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gray-600 hover:text-[#FF631C] transition"
+                        >
+                          <span>Enquire about {product.name}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -333,7 +341,7 @@ export function Products() {
       </section>
 
       {/* CTA */}
-      <section className="px-5 py-20 sm:px-8 lg:px-12 bg-white">
+      <section className="px-6 py-20 sm:px-8 lg:px-10 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl border border-black/[0.08] bg-[#FAFAFA] p-7 sm:p-10 md:flex-row md:items-center md:justify-between lg:p-12">
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">

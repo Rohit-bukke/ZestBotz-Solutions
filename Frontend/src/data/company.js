@@ -193,25 +193,6 @@ export const productList = [
     accent: '#2563EB',
   },
   {
-    id: 'zestrcm',
-    name: 'ZestRCM Analytics',
-    status: 'Prototype / In Development',
-    statusBadge: 'Working Prototype',
-    category: 'Healthcare Revenue Operations',
-    tagline: 'Operational visibility for healthcare revenue cycle workflows.',
-    description:
-      'An RCM analytics prototype focused on healthcare data ingestion, claims status tracking, denial categorization, and revenue trend analysis. Built to help billing teams identify reporting gaps without exposing confidential patient data.',
-    capabilities: [
-      'Claims, payments, and adjustment reporting models',
-      'Denial category breakdown and root-cause indicators',
-      'Accounts receivable aging trends and missing-data alerts',
-      'KPI dashboards for billing and revenue cycle teams',
-      'Structured CSV and reporting ingestion workflows',
-    ],
-    route: '/products/zestRCM',
-    accent: '#FF631C',
-  },
-  {
     id: 'zesthr',
     name: 'ZestHR',
     status: 'Product-Page Concept',
@@ -229,6 +210,25 @@ export const productList = [
     ],
     route: '/products/zestHR',
     accent: '#7C3AED',
+  },
+  {
+    id: 'zestrcm',
+    name: 'ZestRCM Analytics',
+    status: 'Prototype / In Development',
+    statusBadge: 'Working Prototype',
+    category: 'Healthcare Revenue Operations',
+    tagline: 'Operational visibility for healthcare revenue cycle workflows.',
+    description:
+      'An RCM analytics prototype focused on healthcare data ingestion, claims status tracking, denial categorization, and revenue trend analysis. Built to help billing teams identify reporting gaps without exposing confidential patient data.',
+    capabilities: [
+      'Claims, payments, and adjustment reporting models',
+      'Denial category breakdown and root-cause indicators',
+      'Accounts receivable aging trends and missing-data alerts',
+      'KPI dashboards for billing and revenue cycle teams',
+      'Structured CSV and reporting ingestion workflows',
+    ],
+    route: '/products/zestRCM',
+    accent: '#FF631C',
   },
 ]
 

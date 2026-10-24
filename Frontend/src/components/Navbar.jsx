@@ -17,8 +17,8 @@ const serviceLinks = [
 
 const productLinks = [
   ['SchoolOS', '/products/zestSchool'],
-  ['ZestRCM Analytics', '/products/zestRCM'],
   ['ZestHR', '/products/zestHR'],
+  ['ZestRCM Analytics', '/products/zestRCM'],
 ]
 
 const workLinks = [

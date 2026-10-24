@@ -10,14 +10,15 @@ const companyLinks = [
   ['Product Portfolio', '/products'],
   ['Case Studies & Approach', '/work'],
   ['Careers', '/careers'],
+  ['FAQs', '/#faq'],
   ['Contact Us', '/contact'],
   ['Schedule Consultation', '/book-a-call'],
 ]
 
 const productLinks = [
-  ['SchoolOS', '/products/zestSchool'],
-  ['ZestRCM Analytics', '/products/zestRCM'],
-  ['ZestHR', '/products/zestHR'],
+  ['SchoolOS', '/products'],
+  ['ZestHR', '/products'],
+  ['ZestRCM Analytics', '/products'],
 ]
 
 function SocialIcon({ name }) {
