@@ -21,22 +21,6 @@ import {
 const products = [
   {
     number: '01',
-    name: 'ZestRCM',
-    category: 'Healthcare Technology',
-    tagline: 'Bring clarity to healthcare revenue operations.',
-    description:
-      'A healthcare Revenue Cycle Management solution concept focused on claims visibility, denial analysis, billing workflows, and revenue-cycle insights.',
-    features: [
-      'Claims and billing visibility',
-      'Denial analysis',
-      'Revenue-cycle analytics',
-      'Workflow automation',
-    ],
-    accent: '#E8590C',
-    symbol: '✚',
-  },
-  {
-    number: '02',
     name: 'SchoolOS',
     isFlagship: true,
     badge: 'Flagship B2B SaaS MVP',
@@ -57,7 +41,7 @@ const products = [
     deployedUrl: DEFAULT_SCHOOLOS_DEPLOYED_URL,
   },
   {
-    number: '03',
+    number: '02',
     name: 'ZestHR',
     category: 'Human Resources',
     tagline: 'Simplify the employee lifecycle.',
@@ -71,6 +55,22 @@ const products = [
     ],
     accent: '#7C3AED',
     symbol: '◎',
+  },
+  {
+    number: '03',
+    name: 'ZestRCM',
+    category: 'Healthcare Technology',
+    tagline: 'Bring clarity to healthcare revenue operations.',
+    description:
+      'A healthcare Revenue Cycle Management solution concept focused on claims visibility, denial analysis, billing workflows, and revenue-cycle insights.',
+    features: [
+      'Claims and billing visibility',
+      'Denial analysis',
+      'Revenue-cycle analytics',
+      'Workflow automation',
+    ],
+    accent: '#E8590C',
+    symbol: '✚',
   },
 ]
 
@@ -107,7 +107,7 @@ export function Products() {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+        className="relative overflow-hidden px-6 py-20 sm:px-8 sm:py-28 lg:px-10 lg:py-32"
         style={{
           backgroundImage:
             'radial-gradient(ellipse at 8% 12%, rgba(232,89,12,0.15), transparent 38%), radial-gradient(ellipse at 95% 75%, rgba(37,99,235,0.12), transparent 35%)',
@@ -127,7 +127,7 @@ export function Products() {
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#555555] sm:text-lg">
             Explore the ZestBotz product portfolio across education technology,
-            healthcare operations, and human resources. Built with clean monorepo
+            human resources, and healthcare operations. Built with clean monorepo
             architectures, strict tenant boundaries, and real-time automations.
           </p>
 
@@ -151,9 +151,9 @@ export function Products() {
 
           <div className="mt-14 grid max-w-3xl grid-cols-3 gap-4 border-t border-black/10 pt-6">
             {[
-              ['01', 'Healthcare RCM'],
-              ['02', 'SchoolOS Platform'],
-              ['03', 'HR & People'],
+              ['01', 'SchoolOS Platform'],
+              ['02', 'ZestHR (People Ops)'],
+              ['03', 'ZestRCM (Healthcare)'],
             ].map(([number, label]) => (
               <div key={number}>
                 <p className="font-serif text-2xl text-[#E8590C] sm:text-3xl">
@@ -171,7 +171,7 @@ export function Products() {
       {/* Product list */}
       <section
         id="product-list"
-        className="scroll-mt-20 px-5 py-20 sm:px-8 lg:px-12 lg:py-24"
+        className="scroll-mt-20 px-6 py-20 sm:px-8 lg:px-10 lg:py-24"
       >
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
@@ -369,7 +369,7 @@ export function Products() {
 
       {/* CTA */}
       <section
-        className="px-5 pb-20 sm:px-8 lg:px-12 lg:pb-24"
+        className="px-6 pb-20 sm:px-8 lg:px-10 lg:pb-24"
         style={{
           backgroundImage:
             'radial-gradient(ellipse at 90% 80%, rgba(232,89,12,0.09), transparent 40%)',

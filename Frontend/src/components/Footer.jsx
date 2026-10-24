@@ -15,10 +15,11 @@ const services = [
 
 const companyLinks = [
   ['About Us', '/about'],
-  ['Services', '/zestbotz-services'],
+  ['Products', '/products'],
   ['Industries', '/industries'],
   ['Our Work', '/work'],
   ['Careers', '/careers'],
+  ['FAQs', '/#faq'],
   ['Contact', '/contact'],
 ]
 

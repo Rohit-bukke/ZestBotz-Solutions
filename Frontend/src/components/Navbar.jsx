@@ -196,6 +196,12 @@ export function Navbar() {
           ))}
 
           <NavLink
+            to="/products"
+            className="block border-b border-black/10 py-4 text-[15px]"
+          >
+            Products
+          </NavLink>
+          <NavLink
             to="/careers"
             className="block border-b border-black/10 py-4 text-[15px]"
           >

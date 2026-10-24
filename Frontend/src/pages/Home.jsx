@@ -1,5 +1,5 @@
-
 import { Link } from 'react-router-dom'
+import { FAQSection } from '../components/FAQSection'
 
 const services = [
   {
@@ -32,7 +32,7 @@ const services = [
     description:
       'Develop websites, web applications, and software experiences around business requirements.',
     tags: ['Web Development', 'Applications'],
-    href: '/services/web-software-development',
+    href: '/services/web-software-page',
   },
   {
     number: '05',
@@ -56,7 +56,7 @@ const services = [
     description:
       'Support healthcare revenue cycle workflows involving billing, claims, and related administrative processes.',
     tags: ['Healthcare', 'Revenue Cycle'],
-    href: '/services/healthcare-rcm-page',
+    href: '/services/healthcare-page',
   },
   {
     number: '08',
@@ -64,7 +64,64 @@ const services = [
     description:
       'Create conversational experiences that help users access information and interact with digital services.',
     tags: ['Chatbots', 'AI Integration'],
-    href: '/services/chatbot-integration',
+    href: '/services/chatbot-page',
+  },
+]
+
+// Products ordered strictly per requirements: 1. SchoolOS, 2. ZestHR, 3. ZestRCM
+const featuredProducts = [
+  {
+    number: '01',
+    name: 'SchoolOS',
+    isFlagship: true,
+    badge: 'Flagship B2B SaaS',
+    category: 'Education Technology',
+    tagline: 'AI-Ready School Operations Platform Designed for Indian Schools.',
+    description:
+      'Multi-tenant SaaS with strict tenant boundary enforcement (school_id), automated real-time WhatsApp parent alerts, physical perimeter gate passes, and non-toxic constructive academic analytics.',
+    features: [
+      'Strict multi-tenant data isolation (school_id)',
+      'Automated WhatsApp parent alerts & circulars',
+      'Perimeter student safety gate passes & guard console',
+      'Constructive academic growth analytics',
+    ],
+    accent: '#2563EB',
+    symbol: '▦',
+    href: '/products#schoolos',
+  },
+  {
+    number: '02',
+    name: 'ZestHR',
+    category: 'Human Resources',
+    tagline: 'Simplify the modern employee lifecycle.',
+    description:
+      'An HR management solution concept focused on organizing employee records, recruitment pipelines, leave & attendance tracking, and routine HR workflow automation.',
+    features: [
+      'Employee information management',
+      'Leave and attendance tracking',
+      'Recruitment pipeline workflows',
+      'HR workflow approvals',
+    ],
+    accent: '#7C3AED',
+    symbol: '◎',
+    href: '/products#zesthr',
+  },
+  {
+    number: '03',
+    name: 'ZestRCM',
+    category: 'Healthcare Technology',
+    tagline: 'Bring clarity to healthcare revenue operations.',
+    description:
+      'A healthcare Revenue Cycle Management solution focused on claims visibility, denial analysis, automated EMR export validation, and financial reconciliation workflows.',
+    features: [
+      'Claims & billing tracking',
+      'Denial analysis & root cause alerts',
+      'EMR export ingestion & validation',
+      'Financial reconciliation dashboards',
+    ],
+    accent: '#E8590C',
+    symbol: '✚',
+    href: '/products#zestrcm',
   },
 ]
 
@@ -287,7 +344,7 @@ function HeroVisual() {
 function Home() {
   return (
     <main className="overflow-hidden bg-white text-[#111111]">
-      {/* HERO */}
+      {/* 1. HERO */}
       <section
         className="relative"
         style={{
@@ -295,7 +352,7 @@ function Home() {
             'radial-gradient(ellipse at 8% 12%, rgba(232,89,12,0.12), transparent 36%), radial-gradient(ellipse at 95% 70%, rgba(245,161,108,0.12), transparent 34%)',
         }}
       >
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10 lg:py-24">
           <div>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#E8590C]/20 bg-white/80 px-4 py-2 text-sm font-medium text-[#333333]">
               <span className="h-2 w-2 rounded-full bg-[#E8590C]" />
@@ -354,9 +411,9 @@ function Home() {
         </div>
       </section>
 
-      {/* COMPANY INTRODUCTION */}
+      {/* 2. COMPANY INTRODUCTION */}
       <section className="border-y border-black/[0.06] bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20 lg:px-10">
           <div>
             <SectionLabel>Meet ZestBotz</SectionLabel>
             <h2 className="max-w-xl font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
@@ -384,12 +441,12 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* 3. SERVICES */}
       <section
         id="services"
         className="scroll-mt-24 bg-[#F5F5F5] py-20 sm:py-24 lg:py-28"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-6 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
               <SectionLabel>What we do</SectionLabel>
@@ -398,7 +455,7 @@ function Home() {
               </h2>
             </div>
 
-            <p className="max-w-xl text-base leading-8 text-[#555555] sm:text-lg lg:justify-self-end">
+            <p className="max-w-xl text-base leading-8 text-[#555555] sm:text-lg">
               Explore our service areas across automation, AI, software,
               data, enterprise systems, and healthcare workflows.
             </p>
@@ -450,7 +507,7 @@ function Home() {
 
           <div className="mt-8 flex justify-center">
             <Link
-              to="/services"
+              to="/services/process-workflow-page"
               className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-semibold text-[#111111] transition hover:border-[#E8590C] hover:text-[#E8590C]"
             >
               Explore all services
@@ -460,9 +517,121 @@ function Home() {
         </div>
       </section>
 
-      {/* BUSINESS CHALLENGES */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      {/* 4. PRODUCTS & PLATFORMS (Order: 1. SchoolOS, 2. ZestHR, 3. ZestRCM) */}
+      <section id="products" className="scroll-mt-24 bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <SectionLabel>Our Products & Platforms</SectionLabel>
+              <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
+                Purpose-built platforms for real-world impact.
+              </h2>
+              <p className="mt-4 text-base leading-8 text-[#555555] sm:text-lg">
+                Scalable SaaS products and operational systems built with clean
+                architectures, strict tenant isolation, and automated workflows.
+              </p>
+            </div>
+
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-semibold text-[#111111] transition hover:border-[#E8590C] hover:text-[#E8590C]"
+            >
+              View all products & sandboxes
+              <ArrowIcon className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {featuredProducts.map((prod) => {
+              const isSchoolOS = prod.name === 'SchoolOS'
+
+              return (
+                <article
+                  key={prod.name}
+                  className={`group flex h-full flex-col justify-between rounded-3xl border p-7 sm:p-8 transition duration-300 ${
+                    isSchoolOS
+                      ? 'border-blue-200 bg-gradient-to-b from-blue-50/50 via-white to-white shadow-lg shadow-blue-500/[0.04] ring-1 ring-blue-500/10 hover:border-blue-400 hover:shadow-xl'
+                      : 'border-black/[0.08] bg-white hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_16px_45px_rgba(17,17,17,0.06)]'
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/[0.04] text-xs font-bold text-[#555555]">
+                        {prod.number}
+                      </span>
+
+                      <div className="flex items-center gap-2">
+                        {prod.badge && (
+                          <span className="rounded-full bg-blue-600 px-2.5 py-0.5 text-[11px] font-semibold text-white shadow-sm">
+                            {prod.badge}
+                          </span>
+                        )}
+                        <span className="rounded-full border border-black/10 bg-white px-2.5 py-0.5 text-xs font-medium text-[#666666]">
+                          {prod.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 flex items-center gap-3.5">
+                      <div
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl text-white shadow-sm"
+                        style={{ backgroundColor: prod.accent }}
+                      >
+                        {prod.symbol}
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl font-bold tracking-tight text-[#111111]">
+                          {prod.name}
+                        </h3>
+                        <p className="text-xs font-medium text-[#777777]">
+                          {prod.tagline}
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="mt-5 text-sm leading-7 text-[#555555]">
+                      {prod.description}
+                    </p>
+
+                    <div className="mt-6 space-y-2 border-t border-black/[0.06] pt-5">
+                      {prod.features.map((feat) => (
+                        <div
+                          key={feat}
+                          className="flex items-center gap-2.5 text-xs text-[#555555]"
+                        >
+                          <span
+                            className="h-1.5 w-1.5 shrink-0 rounded-full"
+                            style={{ backgroundColor: prod.accent }}
+                          />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-4">
+                    <Link
+                      to={prod.href}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition"
+                      style={{
+                        backgroundColor: isSchoolOS ? '#2563EB' : '#111111',
+                        color: '#FFFFFF',
+                      }}
+                    >
+                      <span>Learn more about {prod.name}</span>
+                      <ArrowIcon className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. BUSINESS CHALLENGES */}
+      <section className="bg-[#F5F5F5] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
             <SectionLabel>Where technology helps</SectionLabel>
             <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
@@ -502,9 +671,9 @@ function Home() {
         </div>
       </section>
 
-      {/* OUR APPROACH */}
-      <section className="bg-[#F5F5F5] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+      {/* 6. OUR APPROACH */}
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
               <SectionLabel>How we approach challenges</SectionLabel>
@@ -558,60 +727,66 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY ZESTBOTZ */}
-      <section className="bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="rounded-[28px] border border-black/[0.07] bg-white p-7 sm:p-10 lg:p-14">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-              <div>
-                <SectionLabel>Our perspective</SectionLabel>
-                <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
-                  The right solution starts with understanding your needs.
-                </h2>
-              </div>
+      {/* 7. WHY ZESTBOTZ (Clean 2-column alignment without 56px inset) */}
+      <section className="border-t border-black/[0.06] bg-[#FAFAFA] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
+            <div>
+              <SectionLabel>Our perspective</SectionLabel>
+              <h2 className="max-w-xl font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
+                The right solution starts with understanding your needs.
+              </h2>
+              <p className="mt-6 max-w-lg text-base leading-8 text-[#555555]">
+                We combine automation, AI, data engineering, and custom software
+                under one engineering discipline so you don't have to manage
+                multiple vendors or fragmented systems.
+              </p>
+            </div>
 
-              <div className="space-y-5">
-                {[
-                  {
-                    title: 'Business-first thinking',
-                    description:
-                      'Begin with your goals, existing processes, and practical requirements.',
-                  },
-                  {
-                    title: 'Connected capabilities',
-                    description:
-                      'Consider automation, data, AI, and software together when the problem calls for it.',
-                  },
-                  {
-                    title: 'Purposeful technology',
-                    description:
-                      'Choose technologies based on their relevance to the problem rather than trends alone.',
-                  },
-                ].map((item, index) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E8590C]/10 text-sm font-bold text-[#E8590C]">
-                      {index + 1}
-                    </div>
-
-                    <div>
-                      <h3 className="text-base font-semibold text-[#111111]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-7 text-[#555555] sm:text-base">
-                        {item.description}
-                      </p>
-                    </div>
+            <div className="space-y-4">
+              {[
+                {
+                  title: 'Business-first thinking',
+                  description:
+                    'Begin with your goals, existing processes, and practical requirements rather than prescribing a predetermined tool.',
+                },
+                {
+                  title: 'Connected capabilities',
+                  description:
+                    'Consider automation, data, AI, and software together when the problem calls for an integrated end-to-end architecture.',
+                },
+                {
+                  title: 'Purposeful technology',
+                  description:
+                    'Choose technologies based on their relevance and measurable business outcomes rather than ephemeral industry hype.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className="flex gap-5 rounded-2xl border border-black/[0.07] bg-white p-6 transition duration-200 hover:border-[#E8590C]/30 sm:p-7"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E8590C]/10 text-sm font-bold text-[#E8590C]">
+                    0{index + 1}
                   </div>
-                ))}
-              </div>
+
+                  <div>
+                    <h3 className="text-base font-semibold text-[#111111] sm:text-lg">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-7 text-[#555555] sm:text-base">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* EXPLORE OUR WORK */}
-      <section className="bg-[#F5F5F5] py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-10">
+      {/* 8. EXPLORE OUR WORK */}
+      <section className="bg-white py-16 sm:py-20 border-t border-black/[0.06]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-10">
           <div>
             <SectionLabel>Explore ZestBotz</SectionLabel>
             <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
@@ -646,48 +821,53 @@ function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-        <div
-          className="mx-auto max-w-7xl overflow-hidden rounded-[28px] px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20"
-          style={{
-            background:
-              'radial-gradient(ellipse at 5% 10%, rgba(232,89,12,0.24), transparent 35%), radial-gradient(ellipse at 95% 90%, rgba(245,161,108,0.14), transparent 36%), #111111',
-          }}
-        >
-          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div className="max-w-3xl">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#F5A16C]">
-                Let's work together
-              </p>
+      {/* 9. FREQUENTLY ASKED QUESTIONS */}
+      <FAQSection id="faq" />
 
-              <h2 className="font-serif text-3xl leading-tight tracking-tight text-white sm:text-4xl lg:text-[48px]">
-                Have a workflow to improve or an idea to build?
-              </h2>
+      {/* 10. FINAL CTA (Aligned to max-w-7xl px-6 sm:px-8 lg:px-10 grid) */}
+      <section className="bg-white py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div
+            className="relative overflow-hidden rounded-[28px] px-7 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20"
+            style={{
+              background:
+                'radial-gradient(ellipse at 5% 10%, rgba(232,89,12,0.24), transparent 35%), radial-gradient(ellipse at 95% 90%, rgba(245,161,108,0.14), transparent 36%), #111111',
+            }}
+          >
+            <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div className="max-w-3xl">
+                <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#F5A16C]">
+                  Let's work together
+                </p>
 
-              <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
-                Tell us about your business challenge. Let's explore how
-                automation, AI, analytics, or software development could
-                support your goals.
-              </p>
-            </div>
+                <h2 className="font-serif text-3xl leading-tight tracking-tight text-white sm:text-4xl lg:text-[48px]">
+                  Have a workflow to improve or an idea to build?
+                </h2>
 
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#E8590C] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#f16a20]"
-              >
-                Contact our team
-                <ArrowIcon className="h-4 w-4" />
-              </Link>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+                  Tell us about your business challenge. Let's explore how
+                  automation, AI, analytics, or software development could
+                  support your goals.
+                </p>
+              </div>
 
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/[0.06]"
-              >
-                View our services
-                <ArrowIcon className="h-4 w-4" />
-              </Link>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#E8590C] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#f16a20]"
+                >
+                  Contact our team
+                  <ArrowIcon className="h-4 w-4" />
+                </Link>
+
+                <Link
+                  to="/products"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/[0.06]"
+                >
+                  View our products
+                  <ArrowIcon className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
