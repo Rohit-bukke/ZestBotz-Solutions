@@ -141,7 +141,7 @@ export function Contact() {
             Contact Us
           </p>
 
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
+          <h1 className="mt-4 max-w-3xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
             Get in <span className="text-[#E8590C]">Touch</span>
           </h1>
 
@@ -157,7 +157,7 @@ export function Contact() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           {/* Form */}
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl">
+            <h2 className="text-2xl sm:text-3xl">
               Send us a message
             </h2>
 
@@ -316,7 +316,7 @@ export function Contact() {
               >
                 {status.loading ? 'Sending...' : 'Send enquiry'}
                 {!status.loading && (
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"></span>
                 )}
               </button>
 
@@ -329,7 +329,7 @@ export function Contact() {
 
           {/* Contact information */}
           <aside className="h-fit rounded-2xl border border-black/[0.08] bg-[#F7F7F7] p-6 sm:p-8">
-            <h2 className="font-serif text-2xl sm:text-3xl">
+            <h2 className="text-2xl sm:text-3xl">
               Contact Information
             </h2>
 
@@ -345,10 +345,10 @@ export function Contact() {
                 <div>
                   <h3 className="text-sm font-semibold">Email</h3>
                   <a
-                    href="mailto:info@zestbotz.com"
+                    href="mailto:support@zestbotz.com"
                     className="mt-1 inline-block text-sm text-[#666666] transition hover:text-[#E8590C]"
                   >
-                    info@zestbotz.com
+                  support@zestbotz.com
                   </a>
                 </div>
               </div>

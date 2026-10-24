@@ -172,17 +172,17 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                 ZestBotz SchoolOS™
               </span>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 border border-emerald-200">
-                Multi-Tenant B2B SaaS MVP
+                Planned SaaS Roadmap Prototype
               </span>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
                 CBSE / ICSE Ready
               </span>
             </div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-gray-900 tracking-tight">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight">
               AI-Ready School Operations Platform Designed for Indian Schools
             </h2>
             <p className="mt-1 text-xs sm:text-sm text-gray-600 max-w-3xl">
-              Engineered with strict tenant boundary isolation (<code className="text-blue-700 bg-blue-50 px-1 py-0.5 rounded font-mono text-xs">school_id</code>), automated WhatsApp parent communications, physical perimeter safety gate passes, and non-toxic constructive growth analytics.
+              Engineered with strict tenant boundary isolation (<code className="text-blue-700 bg-blue-50 px-1 py-0.5 rounded text-xs">school_id</code>), automated WhatsApp parent communications, physical perimeter safety gate passes, and non-toxic constructive growth analytics.
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                 <span>Deployed Sandbox Environment</span>
                 <span className="text-slate-400 font-normal">| Delhi Public Academy (CBSE) Demo</span>
               </div>
-              <div className="text-xs sm:text-sm text-slate-200 font-mono flex items-center gap-2">
+              <div className="text-xs sm:text-sm text-slate-200 flex items-center gap-2">
                 <span className="truncate max-w-[240px] sm:max-w-md">{deployedUrl}</span>
               </div>
             </div>
@@ -305,7 +305,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                       <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
                         Real-Time WhatsApp Automation
                       </h4>
-                      <p className="text-xs text-emerald-600 font-medium">98% Parent Read Rate</p>
+                      <p className="text-xs text-emerald-600 font-medium">High Parent Engagement Channel</p>
                     </div>
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
@@ -334,13 +334,13 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                       <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
                         Perimeter Safety & Gate Passes
                       </h4>
-                      <p className="text-xs text-red-600 font-medium">Zero Unauthorized Student Exits</p>
+                      <p className="text-xs text-red-600 font-medium">Physical Gate Verification Workflow</p>
                     </div>
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
                     <li className="flex items-start gap-2">
                       <span className="text-red-500 mt-0.5">•</span>
-                      <span><strong>Digital Pass Generation:</strong> Teachers generate secure one-time pass codes (e.g. <code className="bg-gray-100 px-1 rounded font-mono">GP-4421</code>).</span>
+                      <span><strong>Digital Pass Generation:</strong> Teachers generate secure one-time pass codes (e.g. <code className="bg-gray-100 px-1 rounded">GP-4421</code>).</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-red-500 mt-0.5">•</span>
@@ -398,7 +398,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
                     <li className="flex items-start gap-2">
                       <span className="text-purple-500 mt-0.5">•</span>
-                      <span><strong>Row & Document Isolation:</strong> Every record (<code className="bg-gray-100 px-1 rounded font-mono">students</code>, <code className="bg-gray-100 px-1 rounded font-mono">attendance</code>, etc.) indexed by <code className="bg-gray-100 px-1 rounded font-mono">school_id</code>.</span>
+                      <span><strong>Row & Document Isolation:</strong> Every record (<code className="bg-gray-100 px-1 rounded">students</code>, <code className="bg-gray-100 px-1 rounded">attendance</code>, etc.) indexed by <code className="bg-gray-100 px-1 rounded">school_id</code>.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-500 mt-0.5">•</span>
@@ -406,7 +406,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-500 mt-0.5">•</span>
-                      <span><strong>Zero Cross-Tenant Leakage:</strong> Designed for chain schools and education groups with multiple branches.</span>
+                      <span><strong>Strict Multi-Tenant Isolation Design:</strong> Designed for chain schools and education groups with multiple branches.</span>
                     </li>
                   </ul>
                 </div>
@@ -478,7 +478,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                     </div>
 
                     <div className="mt-5 pt-4 border-t border-gray-100 space-y-2">
-                      <div className="flex items-center justify-between text-xs bg-gray-50 p-2 rounded-lg font-mono">
+                      <div className="flex items-center justify-between text-xs bg-gray-50 p-2 rounded-lg">
                         <span className="text-gray-500 truncate mr-1">{p.email}</span>
                         <button
                           onClick={() => copyToClipboard(p.email, `${p.role}-email`)}
@@ -489,7 +489,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between text-xs bg-gray-50 p-2 rounded-lg font-mono">
+                      <div className="flex items-center justify-between text-xs bg-gray-50 p-2 rounded-lg">
                         <span className="text-gray-500">Password: <span className="text-gray-900 font-bold">{p.password}</span></span>
                         <button
                           onClick={() => copyToClipboard(p.password, `${p.role}-pass`)}
@@ -529,7 +529,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                   </h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
                     <li>• <strong>Framework:</strong> Python FastAPI + Pydantic v2 domain schemas</li>
-                    <li>• <strong>Authentication:</strong> PBKDF2 SHA-256 passlib + PyJWT with strict <code className="bg-white px-1 rounded font-mono">school_id</code> claim validation</li>
+                    <li>• <strong>Authentication:</strong> PBKDF2 SHA-256 passlib + PyJWT with strict <code className="bg-white px-1 rounded">school_id</code> claim validation</li>
                     <li>• <strong>Workers:</strong> Celery + Redis with exponential backoff retries for WhatsApp queues</li>
                     <li>• <strong>API Docs:</strong> Interactive Swagger UI & ReDoc endpoints</li>
                   </ul>
@@ -556,7 +556,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
                     <li>• <strong>Primary:</strong> MongoDB Atlas (Motor async client) with resilient async in-memory failover fallback</li>
                     <li>• <strong>Relational ORM:</strong> PostgreSQL SQLAlchemy 2.0 ORM deliverables with tenant foreign keys and indices</li>
-                    <li>• <strong>Zero Cross-Tenant Leakage:</strong> All queries automatically scoped to tenant ID</li>
+                    <li>• <strong>Strict Multi-Tenant Isolation Design:</strong> All queries automatically scoped to tenant ID</li>
                   </ul>
                 </div>
 
@@ -567,7 +567,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                   </h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-600">
                     <li>• <strong>Production Ready:</strong> Multi-stage Dockerfile for FastAPI backend and Vite Nginx frontend</li>
-                    <li>• <strong>Orchestration:</strong> Full <code className="bg-white px-1 rounded font-mono">docker-compose.yml</code> (FastAPI, React, Postgres, Redis, Celery)</li>
+                    <li>• <strong>Orchestration:</strong> Full <code className="bg-white px-1 rounded">docker-compose.yml</code> (FastAPI, React, Postgres, Redis, Celery)</li>
                     <li>• <strong>One-Click Seeder:</strong> Instant seed router to populate test CBSE/ICSE institutions and data</li>
                   </ul>
                 </div>
@@ -583,7 +583,7 @@ export function SchoolOSModal({ isOpen, onClose, initialTab = 'overview' }) {
                   <div className="w-14 h-14 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-gray-900">Enquiry Received!</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Enquiry Received!</h3>
                   <p className="mt-2 text-sm text-gray-600 max-w-md mx-auto">
                     Thank you for your interest in ZestBotz SchoolOS. Our education technology specialist will reach out within 24 hours to schedule your personalized institutional walkthrough.
                   </p>

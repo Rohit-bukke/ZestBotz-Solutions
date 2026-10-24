@@ -1,26 +1,24 @@
 import { Link } from 'react-router-dom'
-import { company } from '../data/company.js'
+import { company, servicesList } from '../data/company.js'
 import logo from '../assets/logo.png'
-
-const services = [
-  ['Process & Workflow Automation', '/services/process-workflow-page'],
-  ['Agentic AI Solutions', '/services/agentic-ai-page'],
-  ['Web Scraping & Data Solutions', '/services/web-scraping-page'],
-  ['Web & Software Development', '/services/web-software-page'],
-  ['Data Analytics & Dashboards', '/services/data-analytics'],
-  ['Chatbot Integration', '/services/chatbot-page'],
-  ['ERP Solutions', '/services/erp-page'],
-  ['Healthcare RCM Data Solutions', '/services/healthcare-page'],
-]
+import logoWhite from '../assets/logo-white.png'
 
 const companyLinks = [
-  ['About Us', '/about'],
-  ['Products', '/products'],
-  ['Industries', '/industries'],
-  ['Our Work', '/work'],
+  ['About ZestBotz', '/about'],
+  ['Services Overview', '/services'],
+  ['Target Industries', '/industries'],
+  ['Product Portfolio', '/products'],
+  ['Case Studies & Approach', '/work'],
   ['Careers', '/careers'],
   ['FAQs', '/#faq'],
-  ['Contact', '/contact'],
+  ['Contact Us', '/contact'],
+  ['Schedule Consultation', '/book-a-call'],
+]
+
+const productLinks = [
+  ['SchoolOS', '/products'],
+  ['ZestHR', '/products'],
+  ['ZestRCM Analytics', '/products'],
 ]
 
 function SocialIcon({ name }) {
@@ -34,6 +32,7 @@ function SocialIcon({ name }) {
     strokeWidth: 1.8,
     strokeLinecap: 'round',
     strokeLinejoin: 'round',
+    'aria-hidden': 'true',
   }
 
   if (n.includes('linkedin'))
@@ -41,15 +40,6 @@ function SocialIcon({ name }) {
       <svg {...props}>
         <rect x="3" y="3" width="18" height="18" rx="3" />
         <path d="M8 11v5M8 8v.01M12 16v-5M12 13a2.5 2.5 0 0 1 5 0v3" />
-      </svg>
-    )
-
-  if (n.includes('instagram'))
-    return (
-      <svg {...props}>
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <path d="M17.5 6.5v.01" />
       </svg>
     )
 
@@ -66,52 +56,59 @@ function SocialIcon({ name }) {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#faf9f6] text-left text-[#111]">
-      {/* Ambient gradient */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden="true"
-        style={{
-          background: `
-            radial-gradient(
-              ellipse 35% 60% at 15% 20%,
-              rgba(255, 140, 70, 0.20),
-              transparent 70%
-            ),
-            radial-gradient(
-              ellipse 40% 55% at 45% 45%,
-              rgba(232, 89, 12, 0.16),
-              transparent 70%
-            ),
-            radial-gradient(
-              ellipse 35% 50% at 75% 25%,
-              rgba(255, 190, 130, 0.18),
-              transparent 70%
-            ),
-            radial-gradient(
-              ellipse 45% 55% at 60% 90%,
-              rgba(255, 125, 50, 0.12),
-              transparent 70%
-            )
-          `,
-          filter: 'blur(35px)',
-          transform: 'scale(1.15)',
-        }}
-      />
+    <footer className="relative overflow-hidden border-t border-black/[0.08] bg-white text-left text-[#0B0B0D]">
+  {/* Subtle orange ambient gradient — matching Agentic AI page */}
+  <div
+    className="pointer-events-none absolute inset-0"
+    aria-hidden="true"
+    style={{
+      background: `
+        radial-gradient(
+          ellipse at 8% 12%,
+          rgba(255, 99, 28, 0.10),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 95% 70%,
+          rgba(245, 161, 108, 0.10),
+          transparent 36%
+        )
+      `,
+    }}
+  />
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-16 sm:px-8 lg:px-10">
-        {/* Main content */}
-        <div className="grid items-start gap-12 md:grid-cols-2 lg:grid-cols-[1fr_1.6fr_auto] lg:gap-x-16">
-          {/* Brand */}
-          <div>
-            <Link to="/" className="inline-block">
-              <img src={logo} alt="ZestBotz" className="-ml-10 w-[145px]" />
+  {/* Keep your existing footer content below this line */}
+
+      <div className="relative mx-auto max-w-7xl px-5 pt-16 pb-12 sm:px-8 lg:px-10">
+        {/* Main content grid */}
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          {/* Brand Column */}
+          <div className="flex flex-col items-start lg:col-span-1">
+            <Link to="/" aria-label="ZestBotz home" className="flex items-center gap-2.5">
+              <img
+                src={logo}
+                alt="ZestBotz Logo"
+                className="relative -left-3 block dark:hidden h-12 w-auto object-contain"
+              />
+              <img
+                src={logoWhite}
+                alt="ZestBotz Logo"
+                className="relative -left-3 hidden dark:block h-12 w-auto object-contain"
+              />
             </Link>
 
-            <p className="mt-5 max-w-xs text-[15px] leading-6 text-[#2b2b2b]">
-              {company.tagline ||
-                'Intelligent automation and analytics for modern businesses.'}
+            <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-[#FF631C]">
+              {company.positioning}
             </p>
+
+            <p className="mt-3 text-sm leading-6 text-gray-600">
+              {company.tagline}
+            </p>
+
+            <div className="mt-5 rounded-xl border border-black/[0.06] bg-white/70 p-3 text-xs text-gray-600 shadow-xs">
+              <p className="font-semibold text-gray-900">Three Central Promises:</p>
+              <p className="mt-1 text-gray-600">Automate work · Connect data · Improve decisions</p>
+            </div>
 
             <div className="mt-6 flex gap-3">
               {company.social?.map((item) => (
@@ -121,7 +118,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.name}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E8590C]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-black/[0.08] bg-white text-gray-700 shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#FF631C] hover:bg-[#FF631C] hover:text-white"
                 >
                   <SocialIcon name={item.name} />
                 </a>
@@ -129,56 +126,97 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services (two columns) */}
-          <div>
-            <h3 className="font-serif text-base font-semibold">Services</h3>
-            <ul className="mt-5 md:columns-2 md:gap-x-10">
-              {services.map(([label, path]) => (
-                <li key={path} className="break-inside-avoid pb-3">
+          {/* Official Services (2 cols worth on desktop or clean stack) */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center justify-between pb-2 border-b border-black/[0.08]">
+              <h3 className="text-base font-semibold text-gray-900">
+                Official Services
+              </h3>
+              <Link to="/services" className="text-xs font-medium text-[#FF631C] hover:underline">
+                View All 8 Services →
+              </Link>
+            </div>
+            <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+              {servicesList.map((service) => (
+                <li key={service.id}>
                   <Link
-                    to={path}
-                    className="text-[15px] text-[#2b2b2b] transition-colors hover:text-[#E8590C]"
+                    to={service.href}
+                    className="group block text-xs sm:text-[13px] text-gray-600 transition-colors hover:text-[#FF631C]"
                   >
-                    {label}
+                    <span className="text-[#FF631C] mr-1.5 opacity-80 group-hover:opacity-100">
+                      {service.number}.
+                    </span>
+                    {service.shortTitle}
                   </Link>
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 pt-4 border-t border-black/[0.08]">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Product Portfolio
+              </h4>
+              <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-2">
+                {productLinks.map(([label, path]) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className="text-xs text-gray-600 transition-colors hover:text-[#FF631C]"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-serif text-base font-semibold">Company</h3>
-            <ul className="mt-5 space-y-3">
+          {/* Company & Quick Links */}
+          <div className="lg:col-span-1">
+            <h3 className="text-base font-semibold text-gray-900 pb-2 border-b border-black/[0.08]">
+              Company & Inquiries
+            </h3>
+            <ul className="mt-4 space-y-2.5">
               {companyLinks.map(([label, path]) => (
                 <li key={path}>
                   <Link
                     to={path}
-                    className="text-[15px] text-[#2b2b2b] transition-colors hover:text-[#E8590C]"
+                    className="text-xs sm:text-[13px] text-gray-600 transition-colors hover:text-[#FF631C]"
                   >
                     {label}
                   </Link>
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 rounded-xl border border-[#FF631C]/20 bg-[#FF631C]/[0.04] p-3.5">
+              <p className="text-xs font-semibold text-gray-900">Discovery & Consultations</p>
+              <p className="mt-1 text-[11.5px] text-gray-600 leading-relaxed">
+                Discuss an automation, data pipeline, or custom software requirement with our team.
+              </p>
+              <Link
+                to="/book-a-call"
+                className="mt-2.5 inline-block text-xs font-semibold text-[#FF631C] hover:underline"
+              >
+                Schedule a 30-min discovery call →
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 border-t border-[#1a1a2e] py-6">
-          <div className="flex flex-col gap-2 text-xs text-[#2b2b2b] sm:flex-row sm:items-center">
-            <p>
-              {company.copyright ||
-                '© 2026 ZestBotz Solutions. All rights reserved.'}
-            </p>
-
-            <span className="hidden h-5 w-px bg-[#1a1a2e] sm:mx-4 sm:block" />
-
-            <p>
-              {company.city && company.region
-                ? `${company.city}, ${company.region}`
-                : company.locationFull}
-              {company.phone && ` | ${company.phone}`}
+        <div className="mt-14 border-t border-black/[0.08] pt-6">
+          <div className="flex flex-col gap-3 text-xs text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+            <p>{company.copyright}</p>
+            <p className="flex items-center gap-2">
+              <span>{company.locationFull}</span>
+              <span>·</span>
+              <a href={company.phoneHref} className="hover:text-[#FF631C] transition">
+                {company.phone}
+              </a>
+              <span>·</span>
+              <a href={`mailto:${company.email}`} className="hover:text-[#FF631C] transition">
+                {company.email}
+              </a>
             </p>
           </div>
         </div>
