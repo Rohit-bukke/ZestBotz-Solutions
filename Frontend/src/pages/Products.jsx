@@ -144,13 +144,13 @@ export function Products() {
               <ArrowRight className="w-4 h-4" />
             </a>
 
-            <button
+            {/* <button
               onClick={() => openSchoolOSModal('overview')}
               className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-6 py-3.5 text-sm font-semibold text-blue-700 hover:bg-blue-100 transition shadow-sm"
             >
               <School className="w-4 h-4 text-blue-600" />
               <span>Explore SchoolOS Prototype</span>
-            </button>
+            </button> */}
           </div>
 
           <div className="mt-12 grid max-w-3xl grid-cols-3 gap-4 border-t border-black/10 pt-6">
@@ -313,28 +313,6 @@ export function Products() {
                             <ArrowRight className="w-3.5 h-3.5" />
                           </Link>
 
-                          {isSchoolOS ? (
-                            <>
-                              <button
-                                type="button"
-                                onClick={() => openSchoolOSModal('overview')}
-                                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-blue-500 transition shadow-sm"
-                              >
-                                <Sparkles className="w-3.5 h-3.5" />
-                                <span>Interactive Overview</span>
-                              </button>
-
-                              <a
-                                href={product.deployedUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-300 bg-white px-3.5 py-2.5 text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
-                              >
-                                <span>Sandbox</span>
-                                <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
-                              </a>
-                            </>
-                          ) : (
                             <Link
                               to={`/contact?interest=${encodeURIComponent(product.name)}`}
                               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-700 hover:text-[#FF631C] transition"
@@ -342,7 +320,7 @@ export function Products() {
                               <span>Enquire about {product.name}</span>
                               <ArrowRight className="w-3.5 h-3.5" />
                             </Link>
-                          )}
+                          
                         </div>
                       </div>
                     </div>
