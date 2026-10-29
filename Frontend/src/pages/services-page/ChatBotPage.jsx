@@ -213,7 +213,7 @@ function SectionHeading({
         </p>
       )}
 
-      <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
+      <h2 className="text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
         {title}
       </h2>
 
@@ -361,7 +361,7 @@ export function ChatBotPage() {
               CHATBOT INTEGRATION
             </div>
 
-            <h1 className="mt-7 max-w-2xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
+            <h1 className="mt-7 max-w-2xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
               Better conversations.
               <span className="relative mt-1 inline-block text-[#E8590C]">
                 {' '}More helpful experiences.
@@ -381,7 +381,7 @@ export function ChatBotPage() {
 
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E8590C] px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#c94b09] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8590C]"
               >
                 Discuss your chatbot
@@ -451,7 +451,7 @@ export function ChatBotPage() {
                   <ChatIcon name={item.icon} />
                 </div>
 
-                <span className="font-serif text-lg text-[#E8590C]/50">
+                <span className="text-lg text-[#E8590C]/50">
                   {item.number}
                 </span>
               </div>
@@ -494,7 +494,7 @@ export function ChatBotPage() {
                   />
                 )}
 
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-[#E8590C]/30 bg-white font-serif text-sm font-semibold text-[#E8590C]">
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-[#E8590C]/30 bg-white text-sm font-semibold text-[#E8590C]">
                   {step.number}
                 </div>
 
@@ -520,7 +520,7 @@ export function ChatBotPage() {
             />
 
             <Link
-              to="/contact"
+              to="/book-a-call"
               className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#E8590C] transition-colors hover:text-[#c94b09]"
             >
               Discuss your requirements
@@ -596,7 +596,7 @@ export function ChatBotPage() {
               Let's get started
             </p>
 
-            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               Ready to make conversations more helpful?
             </h2>
 
@@ -607,7 +607,7 @@ export function ChatBotPage() {
             </p>
 
             <Link
-              to="/contact"
+              to="/book-a-call"
               className="group mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E8590C] px-7 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Talk to us

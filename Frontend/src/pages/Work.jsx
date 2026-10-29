@@ -1,217 +1,179 @@
-
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { servicesList } from '../data/company.js'
 
-const capabilities = [
-  {
-    number: '01',
-    title: 'AI & Agentic Automation',
-    description:
-      'Explore how AI-powered systems can support multi-step tasks, decision workflows, and business operations.',
-    tags: ['Agentic AI', 'LLM Integration', 'Automation'],
-  },
-  {
-    number: '02',
-    title: 'Process & Workflow Automation',
-    description:
-      'Identify opportunities to streamline repetitive processes and connect tasks across business workflows.',
-    tags: ['Workflow Design', 'RPA', 'Process Automation'],
-  },
-  {
-    number: '03',
-    title: 'Data & Web Solutions',
-    description:
-      'Build solutions around web data collection, analytics, and software applications tailored to business needs.',
-    tags: ['Web Scraping', 'Analytics', 'Development'],
-  },
-]
-
-function Work() {
+function ArrowIcon({ className = 'h-4 w-4' }) {
   return (
-    <main className="overflow-hidden bg-white text-[#111111]">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14m-6-6 6 6-6 6" />
+    </svg>
+  )
+}
+
+function SectionLabel({ children }) {
+  return (
+    <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+      {children}
+    </p>
+  )
+}
+
+export function Work() {
+  useEffect(() => {
+    document.title = 'Our Work & Case Studies | ZestBotz Solutions'
+    window.scrollTo(0, 0)
+  }, [])
+
+  return (
+    <main className="min-h-screen bg-white text-[#0B0B0D]">
       {/* Hero */}
       <section
-        className="relative"
+        className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
         style={{
           backgroundImage:
-            'radial-gradient(ellipse at 8% 12%, rgba(232,89,12,0.12), transparent 36%), radial-gradient(ellipse at 95% 70%, rgba(245,161,108,0.12), transparent 34%)',
+            'radial-gradient(ellipse at 8% 12%, rgba(255,99,28,0.12), transparent 36%), radial-gradient(ellipse at 95% 70%, rgba(245,161,108,0.12), transparent 34%)',
         }}
       >
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#E8590C]/20 bg-white/80 px-4 py-2 text-sm font-medium text-[#E8590C]">
-              <span className="h-2 w-2 rounded-full bg-[#E8590C]" />
-              Our Work & Approach
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#FF631C]/25 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FF631C]">
+              <span className="h-2 w-2 rounded-full bg-[#FF631C]" />
+              Engineering Standards & Case Studies
             </div>
 
-            <h1 className="max-w-2xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
-              Ideas into solutions.
-              <span className="block text-[#E8590C]">
-                Work that moves business forward.
-              </span>
+            <h1 className="max-w-2xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[58px]">
+              Practical engineering.{' '}
+              <span className="text-[#FF631C]">Verifiable outcomes.</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-base leading-8 text-[#555555] sm:text-lg">
-              Discover the technology areas we work across, from intelligent
-              automation and AI-powered solutions to data and software
-              development. We focus on understanding the problem before
-              designing the solution.
+            <p className="mt-6 max-w-xl text-base leading-8 text-gray-600 sm:text-lg">
+              Explore our disciplined approach across intelligent automation, data engineering, healthcare analytics, and custom software. We focus on diagnosing the core operational friction before recommending or writing code.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c94b08]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FF631C] px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-orange-500/10 hover:bg-[#e05010] transition"
               >
-                Explore our services
-                <span aria-hidden="true">↗</span>
+                Explore Services
+                <ArrowIcon />
               </Link>
 
               <a
                 href="#case-studies"
-                className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white/70 px-7 py-3.5 text-sm font-semibold transition hover:border-[#E8590C] hover:text-[#E8590C]"
+                className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 px-7 py-3.5 text-sm font-semibold text-[#0B0B0D] hover:border-[#FF631C] hover:text-[#FF631C] transition"
               >
-                Explore our work
+                Case Studies Policy
+                <ArrowIcon />
               </a>
             </div>
           </div>
 
-          {/* Decorative capability visual — not a live dashboard */}
+          {/* Solution Framework Card */}
           <div className="relative mx-auto w-full max-w-lg">
-            <div className="absolute -inset-5 rounded-[2rem] bg-[#E8590C]/[0.06] blur-2xl" />
+            <div className="absolute -inset-5 rounded-[2rem] bg-[#FF631C]/10 blur-2xl" />
 
-            <div className="relative rounded-[1.75rem] border border-black/[0.08] bg-white p-5 shadow-[0_25px_80px_rgba(17,17,17,0.08)] sm:p-7">
-              <div className="flex items-center justify-between border-b border-black/[0.08] pb-5">
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#777777]">
-                    Solution framework
-                  </p>
-                  <h2 className="mt-2 font-serif text-2xl">
-                    From challenge to solution
-                  </h2>
-                </div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E8590C]/10 text-xl text-[#E8590C]">
-                  ↗
-                </div>
+            <div className="relative rounded-[1.75rem] border border-black/[0.08] bg-white p-6 sm:p-8 shadow-xl">
+              <div className="border-b border-black/[0.08] pb-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#FF631C]">
+                  Delivery Methodology
+                </p>
+                <h3 className="mt-1 text-2xl font-semibold text-gray-900">
+                  Four-Phase Engineering Cycle
+                </h3>
               </div>
 
               <div className="space-y-3 py-6">
                 {[
-                  {
-                    step: '01',
-                    title: 'Understand',
-                    detail: 'Business goals & challenges',
-                    width: 'w-full',
-                  },
-                  {
-                    step: '02',
-                    title: 'Design',
-                    detail: 'Technology & solution planning',
-                    width: 'w-[88%]',
-                  },
-                  {
-                    step: '03',
-                    title: 'Build',
-                    detail: 'Develop & integrate',
-                    width: 'w-[76%]',
-                  },
-                  {
-                    step: '04',
-                    title: 'Improve',
-                    detail: 'Evaluate & refine',
-                    width: 'w-[64%]',
-                  },
+                  { step: '01', title: 'Understand', detail: 'Map inputs, business rules & exceptions', width: 'w-full' },
+                  { step: '02', title: 'Design', detail: 'Specify architecture & validation constraints', width: 'w-[90%]' },
+                  { step: '03', title: 'Build', detail: 'Develop modular code with automated assertions', width: 'w-[80%]' },
+                  { step: '04', title: 'Improve', detail: 'Telemetry, logging & scheduled monitoring', width: 'w-[70%]' },
                 ].map((item) => (
                   <div
                     key={item.step}
-                    className={`relative ${item.width} rounded-2xl border border-black/[0.07] bg-[#F8F8F8] p-4 transition hover:border-[#E8590C]/40`}
+                    className={`relative ${item.width} rounded-xl border border-black/[0.07] bg-[#F8F8F8] p-3.5 transition hover:border-[#FF631C]/40 hover:bg-white`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E8590C]/10 text-xs font-bold text-[#E8590C]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FF631C]/10 text-xs font-bold text-[#FF631C]">
                         {item.step}
                       </span>
                       <div>
-                        <p className="font-semibold">{item.title}</p>
-                        <p className="mt-1 text-xs text-[#777777] sm:text-sm">
-                          {item.detail}
-                        </p>
+                        <p className="text-xs sm:text-sm font-semibold text-gray-900">{item.title}</p>
+                        <p className="text-[11px] text-gray-500">{item.detail}</p>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <p className="border-t border-black/[0.08] pt-4 text-xs leading-6 text-[#777777]">
-                Our general approach to solution development. This illustration
-                is conceptual and does not represent a specific client project.
+              <p className="border-t border-black/[0.08] pt-4 text-xs leading-5 text-gray-500">
+                Our standard solution development lifecycle. Every engagement incorporates strict validation checkpoints before production deployment.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Case studies */}
-      <section
-        id="case-studies"
-        className="scroll-mt-24 bg-[#F7F7F7] px-5 py-20 sm:px-8 sm:py-24 lg:px-12"
-      >
+      {/* Case studies commitment */}
+      <section id="case-studies" className="scroll-mt-24 bg-[#F9F9FA] px-5 py-20 sm:px-8 lg:px-12 border-t border-black/[0.06]">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#E8590C]">
-              Case studies
-            </p>
-
-            <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
-              Real stories deserve real results.
+            <SectionLabel>Authentic Reporting Policy</SectionLabel>
+            <h2 className="text-3xl font-semibold sm:text-4xl text-[#0B0B0D]">
+              Real stories deserve verified facts.
             </h2>
-
-            <p className="mt-5 text-base leading-8 text-[#555555] sm:text-lg">
-              We want every case study to tell a meaningful story: the
-              challenge, the solution, and the outcomes. Our verified case
-              studies will be featured here as they become available.
+            <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
+              We do not fabricate client logos, invented ROI percentages, or hypothetical revenue statistics. Our case studies feature authorized, verified client engagements as they clear non-disclosure and approval milestones.
             </p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white shadow-[0_20px_70px_rgba(17,17,17,0.05)]">
-            <div className="grid md:grid-cols-[0.8fr_1.2fr]">
-              <div className="relative flex min-h-64 items-center justify-center overflow-hidden bg-[#111111] p-8">
-                <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#E8590C]/30 blur-3xl" />
-                <div className="absolute -bottom-20 -right-10 h-56 w-56 rounded-full bg-[#F5A16C]/20 blur-3xl" />
-
+          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-[2rem] border border-black/[0.08] bg-white shadow-md">
+            <div className="grid md:grid-cols-[0.85fr_1.15fr]">
+              <div className="relative flex min-h-64 items-center justify-center overflow-hidden bg-[#0B0B0D] p-8 text-white">
+                <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#FF631C]/30 blur-3xl" />
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-white/[0.07] text-4xl text-[#F5A16C]">
-                    <span aria-hidden="true">✳</span>
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.08] text-2xl text-[#FF631C]">
+                    <span>✦</span>
                   </div>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-                    ZestBotz Solutions
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-[#FF631C]">
+                    Integrity Standard
                   </p>
-                  <p className="mt-2 font-serif text-2xl text-white">
-                    The next success story
+                  <p className="mt-1 text-xl font-semibold">
+                    Verified Engagements Only
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
-                <span className="w-fit rounded-full bg-[#E8590C]/10 px-3 py-1.5 text-xs font-semibold text-[#E8590C]">
-                  Coming soon
+                <span className="w-fit rounded-full bg-orange-50 border border-orange-200 px-3 py-1 text-xs font-semibold text-[#FF631C]">
+                  Authentic Documentation
                 </span>
 
-                <h3 className="mt-5 font-serif text-2xl leading-snug sm:text-3xl">
-                  We’re preparing our case studies.
+                <h3 className="mt-4 text-2xl font-semibold sm:text-3xl text-gray-900">
+                  Approved case studies published upon verification.
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#555555] sm:text-base">
-                  This space will feature approved project stories, including
-                  the business challenges addressed, solutions developed, and
-                  measurable outcomes where verified data is available.
+                <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  This repository showcases documented methodology and architectural patterns. Detailed customer case studies—including verified data on workflow reduction and error remediation—are released exclusively with client authorization.
                 </p>
 
-                <div className="mt-7">
+                <div className="mt-6 pt-4 border-t border-black/[0.06]">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#E8590C] transition hover:gap-3"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#FF631C] hover:underline"
                   >
-                    Discuss a project with us
-                    <span aria-hidden="true">→</span>
+                    <span>Discuss your operational challenge with us</span>
+                    <ArrowIcon />
                   </Link>
                 </div>
               </div>
@@ -220,141 +182,44 @@ function Work() {
         </div>
       </section>
 
-      {/* Capability areas */}
-      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+      {/* Capability Areas Grid */}
+      <section className="px-5 py-20 sm:px-8 lg:px-12 bg-white">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#E8590C]">
-                Areas of expertise
-              </p>
-              <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
-                The capabilities behind our work.
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <SectionLabel>Core Disciplines</SectionLabel>
+              <h2 className="text-3xl font-semibold sm:text-4xl text-[#0B0B0D]">
+                The technical capabilities behind our work.
               </h2>
             </div>
-
-            <p className="max-w-md text-base leading-7 text-[#555555]">
-              Explore the solution areas we offer. These describe our
-              capabilities, not claimed client engagements or project results.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((capability) => (
-              <article
-                key={capability.number}
-                className="group flex h-full flex-col rounded-2xl border border-black/[0.08] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-[#E8590C]/40 hover:shadow-[0_18px_50px_rgba(232,89,12,0.08)] sm:p-8"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-3xl text-[#E8590C]/70">
-                    {capability.number}
-                  </span>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 transition group-hover:border-[#E8590C]/40 group-hover:bg-[#E8590C]/10">
-                    <span
-                      aria-hidden="true"
-                      className="text-lg transition group-hover:text-[#E8590C]"
-                    >
-                      ↗
-                    </span>
-                  </span>
-                </div>
-
-                <h3 className="mt-7 font-serif text-2xl leading-snug">
-                  {capability.title}
-                </h3>
-
-                <p className="mt-4 flex-1 text-sm leading-7 text-[#555555] sm:text-base">
-                  {capability.description}
-                </p>
-
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {capability.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[#F5F5F5] px-3 py-1.5 text-xs font-medium text-[#555555]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-9 text-center">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 rounded-full border border-black/15 px-6 py-3 text-sm font-semibold transition hover:border-[#E8590C] hover:text-[#E8590C]"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#FF631C] hover:underline"
             >
-              View all services
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Our approach */}
-      <section className="bg-[#F7F7F7] px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#E8590C]">
-              How we approach projects
-            </p>
-
-            <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[42px]">
-              Start with the problem. Build with purpose.
-            </h2>
-
-            <p className="mt-5 text-base leading-8 text-[#555555]">
-              Good technology begins with understanding the people, processes,
-              and goals involved. Our approach emphasizes clarity, relevant
-              technology choices, and solutions aligned with the problem being
-              solved.
-            </p>
-
-            <Link
-              to="/about"
-              className="mt-7 inline-flex items-center gap-2 font-semibold text-[#E8590C] transition hover:gap-3"
-            >
-              Get to know ZestBotz
-              <span aria-hidden="true">→</span>
+              <span>View full service catalog</span>
+              <ArrowIcon />
             </Link>
           </div>
 
-          <div className="space-y-4">
-            {[
-              {
-                number: '01',
-                title: 'Understand the requirements',
-                description:
-                  'Identify the business need, existing workflow, and desired outcome.',
-              },
-              {
-                number: '02',
-                title: 'Choose the right approach',
-                description:
-                  'Evaluate suitable automation, AI, data, or software solutions.',
-              },
-              {
-                number: '03',
-                title: 'Develop and refine',
-                description:
-                  'Build toward the agreed requirements and refine based on feedback.',
-              },
-            ].map((step) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {servicesList.slice(0, 4).map((service) => (
               <div
-                key={step.number}
-                className="flex gap-5 rounded-2xl border border-black/[0.07] bg-white p-5 sm:p-6"
+                key={service.id}
+                className="rounded-2xl border border-black/[0.08] bg-[#FAFAFA] p-6 flex flex-col justify-between hover:border-[#FF631C]/30 hover:bg-white transition"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E8590C]/10 text-sm font-bold text-[#E8590C]">
-                  {step.number}
-                </span>
-
                 <div>
-                  <h3 className="font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-[#666666]">
-                    {step.description}
-                  </p>
+                  <span className="text-xs font-bold text-[#FF631C]">{service.number}</span>
+                  <h3 className="mt-2 text-lg font-semibold text-gray-900">{service.shortTitle}</h3>
+                  <p className="mt-2 text-xs text-gray-600 leading-relaxed">{service.summary}</p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-black/[0.06]">
+                  <Link
+                    to={service.href}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF631C] hover:underline"
+                  >
+                    <span>View Details</span>
+                    <ArrowIcon className="h-3 w-3" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -363,34 +228,39 @@ function Work() {
       </section>
 
       {/* CTA */}
-      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
+      <section className="px-5 pb-20 sm:px-8 lg:px-12">
         <div
-          className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-14 text-center sm:px-12 sm:py-16 lg:px-20"
+          className="mx-auto max-w-7xl rounded-3xl bg-[#0B0B0D] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden"
           style={{
             backgroundImage:
-              'radial-gradient(ellipse at 5% 10%, rgba(232,89,12,0.24), transparent 35%), radial-gradient(ellipse at 95% 90%, rgba(245,161,108,0.14), transparent 36%), #111111',
+              'radial-gradient(ellipse at 5% 10%, rgba(255,99,28,0.25), transparent 35%), radial-gradient(ellipse at 95% 90%, rgba(245,161,108,0.12), transparent 36%)',
           }}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5A16C]">
-            Have a challenge in mind?
-          </p>
-
-          <h2 className="mx-auto mt-5 max-w-3xl font-serif text-3xl leading-tight tracking-tight text-white sm:text-4xl lg:text-[46px]">
-            Your next project could start with a conversation.
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
-            Tell us what you are trying to solve. Let’s explore whether AI,
-            automation, data, or software can help.
-          </p>
-
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#f36a1b]"
-          >
-            Let’s talk
-            <span aria-hidden="true">↗</span>
-          </Link>
+          <div className="max-w-2xl">
+            <SectionLabel>Collaborate</SectionLabel>
+            <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
+              Start your next project with a direct technical conversation.
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-gray-300 leading-relaxed">
+              Tell us about the bottleneck in your operations. We assess feasibility, suggest an appropriate architecture, and outline realistic milestones.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/book-a-call"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FF631C] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#e05010] transition"
+              >
+                Schedule Technical Discovery
+                <ArrowIcon />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white hover:border-[#FF631C] hover:text-[#FF631C] transition"
+              >
+                Submit Project Details
+                <ArrowIcon />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

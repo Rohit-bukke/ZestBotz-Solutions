@@ -1,78 +1,19 @@
-
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
-const benefits = [
-  {
-    number: '01',
-    title: 'Process Review',
-    text: 'A review of your current process.',
-    icon: 'review',
-  },
-  {
-    number: '02',
-    title: 'Software Robots',
-    text: 'Software robots (RPA) for repeat tasks.',
-    icon: 'robot',
-  },
-  {
-    number: '03',
-    title: 'Automated Actions',
-    text: 'Automatic approvals, alerts and reminders.',
-    icon: 'bell',
-  },
-  {
-    number: '04',
-    title: 'Process Tracking',
-    text: 'Tracking, so you can see how it is running.',
-    icon: 'tracking',
-  },
-]
-
-const process = [
-  {
-    number: '01',
-    title: 'Understand',
-    text: 'Review your current process and identify tasks that repeat every day.',
-  },
-  {
-    number: '02',
-    title: 'Plan',
-    text: 'Choose the tasks to automate and define how the workflow should run.',
-  },
-  {
-    number: '03',
-    title: 'Automate',
-    text: 'Set up software robots, approvals, alerts and reminders where needed.',
-  },
-  {
-    number: '04',
-    title: 'Track & Improve',
-    text: 'Review how the workflow runs and make adjustments as needed.',
-  },
-]
-
-const useCases = [
-  'Data entry',
-  'Report making',
-  'Document handling',
-  'Moving data between systems',
-]
 
 function ArrowIcon({ className = 'h-4 w-4' }) {
   return (
     <svg
-      aria-hidden="true"
       className={className}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
     >
-      <path
-        d="M5 12h14m-6-6 6 6-6 6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M5 12h14m-6-6 6 6-6 6" />
     </svg>
   )
 }
@@ -80,417 +21,347 @@ function ArrowIcon({ className = 'h-4 w-4' }) {
 function CheckIcon() {
   return (
     <svg
-      aria-hidden="true"
-      className="h-5 w-5 shrink-0"
+      className="h-4 w-4 text-[#FF631C] shrink-0 mt-0.5"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path
-        d="m5 12 4 4L19 6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-function ServiceIcon({ name }) {
-  const paths = {
-    review: (
-      <>
-        <path d="M8 4h8l3 3v13H5V4h3Z" />
-        <path d="M9 11h6M9 15h6M9 7h2" />
-      </>
-    ),
-    robot: (
-      <>
-        <rect x="4" y="7" width="16" height="13" rx="3" />
-        <path d="M12 3v4M9 12h.01M15 12h.01M9 16h6" />
-      </>
-    ),
-    bell: (
-      <>
-        <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z" />
-        <path d="M10 21h4" />
-      </>
-    ),
-    tracking: (
-      <>
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <path d="M7 15v-3M12 15V8M17 15v-5" />
-      </>
-    ),
-  }
-
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-6 w-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
-      {paths[name]}
+      <path d="m5 12 4 4L19 6" />
     </svg>
-  )
-}
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-  centered = false,
-}) {
-  return (
-    <div className={centered ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
-      {eyebrow && (
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#E8590C]">
-          {eyebrow}
-        </p>
-      )}
-
-      <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
-        {title}
-      </h2>
-
-      {description && (
-        <p className="mt-4 text-base leading-7 text-[#555555] sm:text-lg">
-          {description}
-        </p>
-      )}
-    </div>
-  )
-}
-
-function WorkflowPreview() {
-  const steps = [
-    ['01', 'Identify repeat tasks'],
-    ['02', 'Set up automation'],
-    ['03', 'Track the workflow'],
-  ]
-
-  return (
-    <div className="relative mx-auto w-full max-w-lg">
-      <div
-        aria-hidden="true"
-        className="absolute -inset-5 rounded-[36px] bg-[#E8590C]/10 blur-3xl"
-      />
-
-      <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_24px_80px_-35px_rgba(17,17,17,0.3)]">
-        <div className="flex items-center justify-between border-b border-black/[0.07] px-6 py-5">
-          <div>
-            <p className="text-sm font-semibold text-[#111111]">
-              Example automated workflow
-            </p>
-            <p className="mt-1 text-xs text-[#777777]">
-              A simple view of the process
-            </p>
-          </div>
-
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#E8590C]/10 text-[#E8590C]">
-            <ServiceIcon name="tracking" />
-          </div>
-        </div>
-
-        <div className="p-6 sm:p-8">
-          <div className="rounded-2xl bg-[#F5F5F5] p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#777777]">
-              Repetitive task
-            </p>
-            <p className="mt-2 text-sm leading-6 text-[#111111]">
-              A routine task that takes time when handled manually.
-            </p>
-          </div>
-
-          <div className="ml-7 h-7 w-px bg-[#E8590C]/40" />
-
-          {steps.map(([number, title], index) => (
-            <div key={number}>
-              <div className="flex items-center gap-4 rounded-xl border border-black/[0.08] bg-white p-4 transition-colors hover:border-[#E8590C]/40">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#E8590C]/10 text-xs font-bold text-[#E8590C]">
-                  {number}
-                </span>
-                <span className="text-sm font-medium text-[#222222]">
-                  {title}
-                </span>
-                {index === 2 && (
-                  <span className="ml-auto text-[#E8590C]">
-                    <CheckIcon />
-                  </span>
-                )}
-              </div>
-
-              {index < steps.length - 1 && (
-                <div className="ml-7 h-5 w-px bg-[#E8590C]/40" />
-              )}
-            </div>
-          ))}
-
-          <div className="mt-6 flex items-start gap-3 rounded-xl border border-[#E8590C]/20 bg-[#E8590C]/[0.05] p-4">
-            <span className="mt-0.5 text-[#E8590C]">
-              <ServiceIcon name="review" />
-            </span>
-            <div>
-              <p className="text-sm font-semibold text-[#111111]">
-                Workflow visibility
-              </p>
-              <p className="mt-1 text-xs leading-5 text-[#555555]">
-                Track the process to see how it is running.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="h-1 bg-gradient-to-r from-[#E8590C] via-[#F5A16C] to-[#E8590C]" />
-      </div>
-    </div>
   )
 }
 
 export function ProcessWorkflowAutomationPage() {
-  return (
-    <main className="overflow-hidden bg-white text-[#111111]">
-      {/* Hero */}
-      <section className="relative isolate">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10"
-          style={{
-            background:
-              'radial-gradient(ellipse at 8% 12%, rgba(232,89,12,0.12), transparent 36%), radial-gradient(ellipse at 95% 70%, rgba(245,161,108,0.12), transparent 34%)',
-          }}
-        />
+  useEffect(() => {
+    document.title = 'Python & RPA Automation | ZestBotz Solutions'
+    window.scrollTo(0, 0)
+  }, [])
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-10 lg:pb-28 lg:pt-24">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#E8590C]/20 bg-white/80 px-4 py-2 text-xs font-semibold tracking-wide text-[#E8590C]">
-              <span className="h-2 w-2 rounded-full bg-[#E8590C]" />
-              PROCESS & WORKFLOW AUTOMATION
+  const capabilities = [
+    {
+      title: 'Python Scripting & Task Scheduling',
+      desc: 'Robust standalone scripts and scheduled cron jobs executing repeatable processes on precise schedules without manual intervention.',
+    },
+    {
+      title: 'Excel, CSV & PDF File Automation',
+      desc: 'Programmatic parsing, cleaning, merging, and transformation of spreadsheets and tabular PDFs with complete column mapping and data verification.',
+    },
+    {
+      title: 'Permitted Browser & Web Automation',
+      desc: 'Headless or visible browser automation for web portals, vendor login sessions, form filling, and repetitive report downloads.',
+    },
+    {
+      title: 'Desktop UI Automation (RPA)',
+      desc: 'Automating legacy desktop software, ERP clients, and on-premises tools using controlled OS-level interactions.',
+    },
+    {
+      title: 'Two-Way Data Reconciliation',
+      desc: 'Comparing financial, inventory, or operational datasets across systems, highlighting unmatched records, duplicates, and variance thresholds.',
+    },
+    {
+      title: 'Logging, Retries & Error Reporting',
+      desc: 'Comprehensive execution logging with automatic retry policies for transient network drops and immediate email/webhook alerts on failures.',
+    },
+  ]
+
+  const useCases = [
+    {
+      title: 'Daily Bank & Statement Reconciliation',
+      desc: 'Downloading daily bank transactions, cross-referencing against internal ERP invoices, and generating discrepancy reports for finance teams.',
+    },
+    {
+      title: 'Multi-Portal Order & Inventory Sync',
+      desc: 'Updating product stock levels and pulling pending order manifests across e-commerce portals and proprietary warehouse systems.',
+    },
+    {
+      title: 'Billing & Data Entry Workflows',
+      desc: 'Extracting data from structured customer submissions and keying them into billing systems with input validation checks.',
+    },
+    {
+      title: 'Scheduled Regulatory & Operational Exports',
+      desc: 'Compiling weekly operational logs from databases, formatting into compliance spreadsheets, and delivering via SFTP/email.',
+    },
+  ]
+
+  const deliverables = [
+    'Clean, commented, version-controlled Python automation codebase',
+    'Configured task scheduling (Cron / Windows Task Scheduler / Prefect)',
+    'Detailed execution log files with timestamped operational steps',
+    'Automated exception reporting via Email, Webhook, or Slack',
+    'Data validation schemas guarding against corrupted inputs',
+    'Comprehensive deployment and maintenance guide',
+  ]
+
+  const technologies = [
+    'Python 3.x',
+    'Pandas & NumPy',
+    'OpenPyXL & XlsxWriter',
+    'Selenium WebDriver',
+    'PyAutoGUI & pywinauto',
+    'Playwright',
+    'Prefect & Cron',
+  ]
+
+  return (
+    <main className="min-h-screen bg-white text-[#0B0B0D]">
+      {/* Hero */}
+      <section
+        className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
+        style={{
+          background:
+            'radial-gradient(ellipse at 8% 12%, rgba(255,99,28,0.12), transparent 40%), radial-gradient(ellipse at 95% 70%, rgba(245,161,108,0.12), transparent 36%)',
+        }}
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#FF631C]/25 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FF631C]">
+            <span className="h-2 w-2 rounded-full bg-[#FF631C]" />
+            Service 02 · Scripting & RPA
+          </div>
+
+          <h1 className="mt-5 max-w-4xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[56px]">
+            Python and RPA <span className="text-[#FF631C]">Automation.</span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-gray-600 sm:text-lg">
+            Eliminate repetitive manual tasks through dependable Python scripts, permitted browser automation, and desktop robotic process automation. Built with structured error handling, retries, and complete operational transparency.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              to="/book-a-call?service=Process%20%26%20Workflow%20Automation"
+              className="inline-flex items-center gap-2 rounded-full bg-[#FF631C] px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-orange-500/10 hover:bg-[#e05010] transition"
+            >
+              Discuss RPA Automation
+              <ArrowIcon />
+            </Link>
+            <Link
+              to="/contact?interest=Process%20%26%20Workflow%20Automation"
+              className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 px-7 py-3.5 text-sm font-semibold text-[#0B0B0D] hover:border-[#FF631C] hover:text-[#FF631C] transition"
+            >
+              Request Automation Review
+              <ArrowIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 1. The Business Problem */}
+      <section className="px-5 py-16 sm:px-8 lg:px-12 bg-white border-b border-black/[0.06]">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+                01 · The Business Problem
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold sm:text-4xl text-[#0B0B0D]">
+                High-friction manual tasks consume staff hours and introduce errors.
+              </h2>
+            </div>
+            <div className="space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed">
+              <p>
+                In almost every business, critical processes still rely on manual data entry: an employee downloads a CSV from a vendor portal, copies rows into an internal Excel sheet, formats dates, checks for mismatches, and types values into another legacy software system.
+              </p>
+              <p>
+                This manual cycle is tedious, expensive, and inevitably prone to typos, missed runs, and operational delays. Off-the-shelf heavyweight enterprise RPA platforms often impose restrictive annual licenses and complex infrastructure that small-to-medium teams do not need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Proposed Solution */}
+      <section className="px-5 py-20 sm:px-8 lg:px-12 bg-[#F9F9FA]">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+              02 · The Solution
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
+              Clean Python scripts and targeted desktop automation.
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-gray-600 leading-relaxed">
+              We build lean, customized Python automations that operate directly on your data structures and interfaces. You retain full source code ownership without vendor lock-in. Every automation includes validation gates, retry mechanisms, and transparent execution logs.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map((cap, i) => (
+              <div
+                key={cap.title}
+                className="rounded-2xl border border-black/[0.07] bg-white p-6 shadow-sm hover:border-[#FF631C]/30 transition"
+              >
+                <span className="text-xs font-bold text-[#FF631C]">0{i + 1}</span>
+                <h3 className="mt-3 text-lg font-semibold text-gray-900">{cap.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">{cap.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Practical Use Cases */}
+      <section className="px-5 py-20 sm:px-8 lg:px-12 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+              03 · Practical Use Cases
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
+              Repeatable workflows ready for automation.
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {useCases.map((uc) => (
+              <div key={uc.title} className="rounded-2xl border border-black/[0.08] bg-[#FAFAFA] p-6 sm:p-8">
+                <h3 className="text-xl font-semibold text-gray-900">{uc.title}</h3>
+                <p className="mt-3 text-sm text-gray-600 leading-relaxed">{uc.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4 & 5. Deliverables & Expected Benefits */}
+      <section className="px-5 py-20 sm:px-8 lg:px-12 bg-[#F9F9FA] border-t border-black/[0.06]">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+                04 · Capabilities & Deliverables
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">
+                What we build and deliver.
+              </h2>
+              <ul className="mt-6 space-y-3">
+                {deliverables.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
+                    <CheckIcon />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <h1 className="mt-7 max-w-2xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
-              Let software handle the{' '}
-              <span className="relative inline-block text-[#E8590C]">
-                repeat work.
-                <span
-                  aria-hidden="true"
-                  className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-[#E8590C]/25"
-                />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+                05 · Realistic Benefits
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">
+                Expected operational gains.
+              </h2>
+              <div className="mt-6 space-y-4 text-sm text-gray-600 leading-relaxed">
+                <div className="rounded-xl border border-black/[0.06] bg-white p-4">
+                  <p className="font-semibold text-gray-900">Drastic reduction in manual re-entry errors</p>
+                  <p className="mt-1 text-xs text-gray-600">Deterministic code eliminates transposition errors, copy-paste truncation, and accidental formula overwrites.</p>
+                </div>
+                <div className="rounded-xl border border-black/[0.06] bg-white p-4">
+                  <p className="font-semibold text-gray-900">Predictable, timely execution</p>
+                  <p className="mt-1 text-xs text-gray-600">Workflows run punctually at scheduled times—overnight, early mornings, or in response to file drops.</p>
+                </div>
+                <div className="rounded-xl border border-black/[0.06] bg-white p-4">
+                  <p className="font-semibold text-gray-900">Zero recurring proprietary RPA seat licenses</p>
+                  <p className="mt-1 text-xs text-gray-600">Built entirely with open, industry-standard Python tooling that your internal IT team can own and maintain.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Relevant Technologies */}
+      <section className="px-5 py-16 sm:px-8 lg:px-12 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+            06 · Verified Tooling
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">
+            Robust Python ecosystem technologies.
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            {technologies.map((t) => (
+              <span
+                key={t}
+                className="rounded-lg border border-black/[0.08] bg-gray-50 px-3.5 py-2 text-xs font-medium text-gray-800"
+              >
+                {t}
               </span>
-            </h1>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-[#555555] sm:text-lg">
-              Let software handle repeat tasks like data entry, reports and
-              approvals, so your team can focus on real work.
+      {/* 7. Implementation Approach */}
+      <section className="px-5 py-20 sm:px-8 lg:px-12 bg-[#F9F9FA] border-t border-black/[0.06]">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF631C]">
+            07 · Implementation Roadmap
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
+            Step-by-step automation engineering.
+          </h2>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { step: 'Phase 1', title: 'Task Walkthrough', desc: 'Screen recording and step-by-step documentation of inputs, selectors, and edge cases.' },
+              { step: 'Phase 2', title: 'Script Development', desc: 'Writing modular Python code with robust selectors, type checks, and validation rules.' },
+              { step: 'Phase 3', title: 'Testing & Retries', desc: 'Simulating network timeouts, empty files, and format shifts with automated alerts.' },
+              { step: 'Phase 4', title: 'Scheduled Deployment', desc: 'Production deployment to your server or cloud runner with logging active.' },
+            ].map((p) => (
+              <div key={p.step} className="rounded-2xl border border-black/[0.08] bg-white p-6">
+                <span className="text-xs font-bold text-[#FF631C]">{p.step}</span>
+                <h3 className="mt-2 text-lg font-semibold text-gray-900">{p.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CTA */}
+      <section className="px-5 py-20 sm:px-8 lg:px-12">
+        <div
+          className="mx-auto max-w-7xl rounded-3xl bg-[#0B0B0D] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden"
+          style={{
+            backgroundImage:
+              'radial-gradient(ellipse at 5% 10%, rgba(255,99,28,0.25), transparent 35%), radial-gradient(ellipse at 95% 90%, rgba(245,161,108,0.12), transparent 36%)',
+          }}
+        >
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#FF631C]">
+              08 · Automate Your Repetitive Tasks
             </p>
-
-            <div className="mt-9 flex flex-wrap gap-3">
+            <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
+              Have an Excel, CSV, or browser routine you want to automate?
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed">
+              Walk us through the steps that take up your team's time. We will demonstrate how a Python script can handle it reliably.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                to="/contact"
-                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E8590C] px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#c94b09] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8590C]"
+                to="/book-a-call?service=Process%20%26%20Workflow%20Automation"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FF631C] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#e05010] transition"
               >
-                Discuss your workflow
-                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Book Discovery Call
+                <ArrowIcon />
               </Link>
-
               <Link
-                to="/services"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-black/15 bg-white/70 px-6 py-3 text-sm font-semibold text-[#111111] transition hover:border-[#E8590C] hover:text-[#E8590C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8590C]"
+                to="/contact?interest=Process%20%26%20Workflow%20Automation"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white hover:border-[#FF631C] hover:text-[#FF631C] transition"
               >
-                Explore services
+                Send Us Process Details
                 <ArrowIcon />
               </Link>
             </div>
-
-            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-[#555555]">
-              {['Built around your process', 'Less repetitive work'].map(
-                (item) => (
-                  <span key={item} className="inline-flex items-center gap-2">
-                    <span className="text-[#E8590C]">
-                      <CheckIcon />
-                    </span>
-                    {item}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-
-          <WorkflowPreview />
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="border-y border-black/[0.07] bg-[#F5F5F5]">
-        <div className="mx-auto grid max-w-7xl gap-5 px-6 py-9 sm:px-8 md:grid-cols-[0.8fr_1.2fr] md:items-center lg:px-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#E8590C]">
-            About this service
-          </p>
-          <p className="max-w-3xl text-base leading-7 text-[#555555]">
-            Many teams spend hours on tasks that repeat every day, like typing
-            data, making reports or sending approvals. We find these tasks and
-            set up software to do them for you. The work gets done faster and
-            with fewer mistakes.
-          </p>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section
-        id="what-you-get"
-        className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10"
-      >
-        <SectionHeading
-          eyebrow="What you get"
-          title="Practical automation for everyday work."
-          description="We focus on repeat tasks and workflows that can be made easier to manage."
-        />
-
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((item) => (
-            <article
-              key={item.number}
-              className="group relative overflow-hidden rounded-2xl border border-black/[0.09] bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E8590C]/40 hover:shadow-[0_16px_40px_-25px_rgba(232,89,12,0.35)] sm:p-7"
-            >
-              <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E8590C]/10 text-[#E8590C] transition-colors group-hover:bg-[#E8590C] group-hover:text-white">
-                  <ServiceIcon name={item.icon} />
-                </div>
-                <span className="font-serif text-lg text-[#E8590C]/50">
-                  {item.number}
-                </span>
-              </div>
-
-              <h3 className="mt-6 text-lg font-semibold tracking-tight">
-                {item.title}
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-[#555555]">
-                {item.text}
-              </p>
-
-              <div className="mt-6 h-px w-10 bg-[#E8590C]/40 transition-all duration-300 group-hover:w-16 group-hover:bg-[#E8590C]" />
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="relative overflow-hidden bg-[#F5F5F5]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-36 top-0 h-80 w-80 rounded-full bg-[#E8590C]/10 blur-3xl"
-        />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10">
-          <SectionHeading
-            eyebrow="Our approach"
-            title="From repetitive tasks to a clearer workflow."
-            description="We review how your work gets done and identify practical opportunities for automation."
-          />
-
-          <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, index) => (
-              <li key={step.number} className="relative">
-                {index < process.length - 1 && (
-                  <div
-                    aria-hidden="true"
-                    className="absolute left-12 top-6 hidden h-px w-[calc(100%-2rem)] bg-[#E8590C]/25 lg:block"
-                  />
-                )}
-
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-[#E8590C]/30 bg-white font-serif text-sm font-semibold text-[#E8590C]">
-                  {step.number}
-                </div>
-
-                <h3 className="mt-5 text-lg font-semibold">{step.title}</h3>
-                <p className="mt-3 max-w-xs text-sm leading-7 text-[#555555]">
-                  {step.text}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Use cases */}
-      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <div>
-            <SectionHeading
-              eyebrow="Good for"
-              title="Where can workflow automation help?"
-              description="Routine tasks that follow repeatable steps can be useful starting points for automation."
-            />
-
-            <Link
-              to="/contact"
-              className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#E8590C] hover:text-[#c94b09]"
-            >
-              Discuss your requirements
-              <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {useCases.map((item, index) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-xl border border-black/[0.08] bg-white p-4 transition-colors hover:border-[#E8590C]/40 hover:bg-[#E8590C]/[0.025] sm:p-5"
-              >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#E8590C]/10 text-xs font-bold text-[#E8590C]">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <p className="text-sm font-medium leading-6 text-[#333333]">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#111111] px-6 py-14 text-center text-white sm:px-12 sm:py-20">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-[#E8590C]/25 blur-[90px]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-40 -left-24 h-80 w-80 rounded-full bg-[#E8590C]/15 blur-[90px]"
-          />
-
-          <div className="relative mx-auto max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5A16C]">
-              Let's get started
-            </p>
-
-            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
-              Ready to make repetitive work simpler?
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-              Tell us about the tasks or processes your team wants to make
-              easier. We'll discuss a practical approach for your business.
-            </p>
-
-            <Link
-              to="/contact"
-              className="group mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E8590C] px-7 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Talk to us
-              <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
           </div>
         </div>
       </section>
     </main>
   )
 }
+
+export default ProcessWorkflowAutomationPage

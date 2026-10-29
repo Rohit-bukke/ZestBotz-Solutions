@@ -183,7 +183,7 @@ export function Careers() {
             Careers at ZestBotz
           </p>
 
-          <h1 className="mt-5 max-w-4xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[68px]">
+          <h1 className="mt-5 max-w-4xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[68px]">
             Build what&apos;s next.
             <br />
             <span className="text-[#E8590C]">Make an impact.</span>
@@ -201,7 +201,6 @@ export function Careers() {
               className="inline-flex items-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c94b08]"
             >
               Explore career areas
-              <span aria-hidden="true">↘</span>
             </a>
 
             <button
@@ -242,7 +241,7 @@ export function Careers() {
               Find your direction
             </p>
 
-            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               Areas where you can grow
             </h2>
 
@@ -259,7 +258,7 @@ export function Careers() {
                 className="group rounded-2xl border border-black/[0.08] bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E8590C]/40 hover:shadow-xl hover:shadow-orange-900/5 sm:p-8"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-serif text-3xl text-[#E8590C]">
+                  <span className="text-3xl text-[#E8590C]">
                     {area.number}
                   </span>
                   <span className="text-xl text-black/30 transition group-hover:text-[#E8590C]">
@@ -267,7 +266,7 @@ export function Careers() {
                   </span>
                 </div>
 
-                <h3 className="mt-7 font-serif text-2xl">{area.title}</h3>
+                <h3 className="mt-7 text-2xl">{area.title}</h3>
 
                 <p className="mt-3 min-h-20 text-sm leading-7 text-[#666666]">
                   {area.description}
@@ -298,7 +297,7 @@ export function Careers() {
                 Explore opportunities
               </p>
 
-              <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+              <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
                 Find a role that fits you
               </h2>
 
@@ -330,7 +329,7 @@ export function Careers() {
                       </span>
                     </div>
 
-                    <h3 className="mt-4 font-serif text-2xl sm:text-3xl">
+                    <h3 className="mt-4 text-2xl sm:text-3xl">
                       {job.title}
                     </h3>
 
@@ -382,7 +381,7 @@ export function Careers() {
               Your next step
             </p>
 
-            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
               Let&apos;s get to know you.
             </h2>
 
@@ -418,7 +417,7 @@ export function Careers() {
           </div>
 
           <div className="rounded-2xl border border-black/[0.08] bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-            <h3 className="font-serif text-2xl sm:text-3xl">
+            <h3 className="text-2xl sm:text-3xl">
               Application form
             </h3>
 
@@ -652,7 +651,7 @@ export function Careers() {
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#E8590C]">
               Have something else in mind?
             </p>
-            <h2 className="mt-3 font-serif text-2xl sm:text-3xl">
+            <h2 className="mt-3 text-2xl sm:text-3xl">
               Your skills could fit in more than one place.
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-[#666666]">

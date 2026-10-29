@@ -230,7 +230,7 @@ function SectionHeading({ eyebrow, title, description, centered = true }) {
         </p>
       )}
 
-      <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
+      <h2 className="text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
         {title}
       </h2>
 
@@ -278,7 +278,7 @@ function ERPPreview() {
 
         <div className="p-5 sm:p-6">
           <div className="mb-5">
-            <p className="font-serif text-2xl text-[#111111]">
+            <p className="text-2xl text-[#111111]">
               Connected operations
             </p>
             <p className="mt-2 text-sm leading-6 text-[#777777]">
@@ -365,7 +365,7 @@ export function ERPPage() {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl leading-[1.12] tracking-tight text-[#111111] sm:text-5xl lg:text-[62px]">
+            <h1 className="text-4xl leading-[1.12] tracking-tight text-[#111111] sm:text-5xl lg:text-[62px]">
               Bring your business together with{' '}
               <span className="text-[#E8590C]">ERP solutions.</span>
             </h1>
@@ -378,7 +378,7 @@ export function ERPPage() {
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#E8590C] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#cf4e09] hover:shadow-lg hover:shadow-[#E8590C]/20"
               >
                 Discuss Your ERP Needs
@@ -418,7 +418,7 @@ export function ERPPage() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#E8590C]">
               One connected foundation
             </p>
-            <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
+            <h2 className="text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
               Replace disconnected workflows with a clearer way to work.
             </h2>
           </div>
@@ -460,12 +460,12 @@ export function ERPPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E8590C]/10 text-[#E8590C] transition-colors duration-300 group-hover:bg-[#E8590C] group-hover:text-white">
                     <Icon name={module.icon} size={23} />
                   </div>
-                  <span className="font-serif text-sm text-[#999999]">
+                  <span className="text-sm text-[#999999]">
                     {module.number}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl leading-snug text-[#111111]">
+                <h3 className="text-2xl leading-snug text-[#111111]">
                   {module.title}
                 </h3>
 
@@ -515,7 +515,7 @@ export function ERPPage() {
                   <Icon name={benefit.icon} size={23} />
                 </div>
 
-                <h3 className="font-serif text-xl text-[#111111]">
+                <h3 className="text-xl text-[#111111]">
                   {benefit.title}
                 </h3>
 
@@ -536,7 +536,7 @@ export function ERPPage() {
               Connected technology
             </p>
 
-            <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
+            <h2 className="text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[42px]">
               Make your existing systems work better together.
             </h2>
 
@@ -571,7 +571,7 @@ export function ERPPage() {
 
             <div className="relative rounded-2xl border border-black/[0.08] bg-white p-6 shadow-[0_20px_60px_rgba(17,17,17,0.05)] sm:p-8">
               <div className="mb-7">
-                <p className="font-serif text-2xl text-[#111111]">
+                <p className="text-2xl text-[#111111]">
                   A connected ecosystem
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[#777777]">
@@ -659,12 +659,12 @@ export function ERPPage() {
                 key={item.title}
                 className="group flex gap-5 rounded-2xl border border-black/[0.09] bg-white p-6 transition-all duration-300 hover:border-[#E8590C]/40 hover:shadow-lg hover:shadow-black/[0.04] sm:p-8"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E8590C]/10 font-serif text-lg text-[#E8590C] transition-colors duration-300 group-hover:bg-[#E8590C] group-hover:text-white">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E8590C]/10 text-lg text-[#E8590C] transition-colors duration-300 group-hover:bg-[#E8590C] group-hover:text-white">
                   0{index + 1}
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl text-[#111111]">
+                  <h3 className="text-2xl text-[#111111]">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-[#555555] sm:text-base">
@@ -692,7 +692,7 @@ export function ERPPage() {
                 key={step.number}
                 className="rounded-2xl border border-black/[0.08] bg-white p-6 sm:p-7"
               >
-                <p className="font-serif text-4xl text-[#E8590C]/35">
+                <p className="text-4xl text-[#E8590C]/35">
                   {step.number}
                 </p>
 
@@ -700,7 +700,7 @@ export function ERPPage() {
                   <div className="h-px w-12 bg-[#E8590C]" />
                 </div>
 
-                <h3 className="font-serif text-xl text-[#111111]">
+                <h3 className="text-xl text-[#111111]">
                   {step.title}
                 </h3>
 
@@ -725,7 +725,7 @@ export function ERPPage() {
               Built around your needs
             </p>
 
-            <h2 className="font-serif text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl">
+            <h2 className="text-3xl leading-tight tracking-tight text-[#111111] sm:text-4xl">
               The right ERP starts with the right requirements.
             </h2>
           </div>
@@ -777,7 +777,7 @@ export function ERPPage() {
               Let’s build a better-connected business
             </p>
 
-            <h2 className="font-serif text-3xl leading-tight tracking-tight text-white sm:text-4xl lg:text-[48px]">
+            <h2 className="text-3xl leading-tight tracking-tight text-white sm:text-4xl lg:text-[48px]">
               Ready to simplify your business operations?
             </h2>
 
@@ -789,7 +789,7 @@ export function ERPPage() {
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/book-a-call"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#E8590C] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#cf4e09] hover:shadow-lg hover:shadow-[#E8590C]/20"
               >
                 Talk to Our Team

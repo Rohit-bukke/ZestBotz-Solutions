@@ -1,19 +1,25 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams, Link } from 'react-router-dom'
+import { School, Sparkles, CheckCircle2 } from 'lucide-react'
 
 const interests = [
+  'SchoolOS (School Operations Platform)',
+  'ZestHR (Human Resources)',
+  'ZestRCM (Healthcare RCM)',
   'AI & Agentic AI',
   'Process & Workflow Automation',
   'Web Scraping & Data Solutions',
   'Web & Software Development',
   'Data Analytics',
   'ERP Solutions',
-  'Healthcare RCM',
   'Chatbot Integration',
   'Other',
 ]
 
 export function Contact() {
+  const [searchParams] = useSearchParams()
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -21,6 +27,35 @@ export function Contact() {
     interest: '',
     message: '',
   })
+
+  useEffect(() => {
+    const rawInterest = searchParams.get('interest')
+    if (rawInterest) {
+      const lower = rawInterest.toLowerCase()
+      if (lower.includes('schoolos') || lower.includes('school')) {
+        setForm((prev) => ({
+          ...prev,
+          interest: 'SchoolOS (School Operations Platform)',
+          message: prev.message || 'Hello ZestBotz team, I would like to enquire about SchoolOS for our school/institution. We are interested in the automated WhatsApp parent alerts, physical perimeter gate passes, and constructive academic analytics.',
+        }))
+      } else if (lower.includes('rcm')) {
+        setForm((prev) => ({
+          ...prev,
+          interest: 'ZestRCM (Healthcare RCM)',
+        }))
+      } else if (lower.includes('hr')) {
+        setForm((prev) => ({
+          ...prev,
+          interest: 'ZestHR (Human Resources)',
+        }))
+      } else {
+        const found = interests.find((item) => item.toLowerCase().includes(lower))
+        if (found) {
+          setForm((prev) => ({ ...prev, interest: found }))
+        }
+      }
+    }
+  }, [searchParams])
 
   const [status, setStatus] = useState({
     loading: false,
@@ -106,7 +141,7 @@ export function Contact() {
             Contact Us
           </p>
 
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
+          <h1 className="mt-4 max-w-3xl text-4xl leading-[1.12] tracking-tight sm:text-5xl lg:text-[62px]">
             Get in <span className="text-[#E8590C]">Touch</span>
           </h1>
 
@@ -122,7 +157,7 @@ export function Contact() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           {/* Form */}
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl">
+            <h2 className="text-2xl sm:text-3xl">
               Send us a message
             </h2>
 
@@ -130,6 +165,28 @@ export function Contact() {
               Tell us a little about your requirements and we’ll have the
               information ready for a conversation.
             </p>
+
+            {form.interest.includes('SchoolOS') && (
+              <div className="mt-5 p-4 rounded-2xl bg-blue-50 border border-blue-200 text-blue-900 flex items-start gap-3">
+                <School className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                <div className="text-xs sm:text-sm">
+                  <p className="font-semibold text-blue-950">
+                    Enquiring about ZestBotz SchoolOS™ (B2B SaaS)
+                  </p>
+                  <p className="mt-0.5 text-blue-800">
+                    Looking for a school demonstration, live WhatsApp parent alerts, perimeter gate pass safety, or custom pricing for CBSE / ICSE institutions? We will prepare tailored materials for your school.
+                  </p>
+                  <div className="mt-2 flex items-center gap-3">
+                    <Link
+                      to="/products#schoolos"
+                      className="font-medium text-blue-700 underline hover:text-blue-900"
+                    >
+                      ← Back to SchoolOS Overview
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
@@ -259,7 +316,7 @@ export function Contact() {
               >
                 {status.loading ? 'Sending...' : 'Send enquiry'}
                 {!status.loading && (
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"></span>
                 )}
               </button>
 
@@ -272,7 +329,7 @@ export function Contact() {
 
           {/* Contact information */}
           <aside className="h-fit rounded-2xl border border-black/[0.08] bg-[#F7F7F7] p-6 sm:p-8">
-            <h2 className="font-serif text-2xl sm:text-3xl">
+            <h2 className="text-2xl sm:text-3xl">
               Contact Information
             </h2>
 
@@ -288,10 +345,10 @@ export function Contact() {
                 <div>
                   <h3 className="text-sm font-semibold">Email</h3>
                   <a
-                    href="mailto:info@zestbotz.com"
+                    href="mailto:support@zestbotz.com"
                     className="mt-1 inline-block text-sm text-[#666666] transition hover:text-[#E8590C]"
                   >
-                    info@zestbotz.com
+                  support@zestbotz.com
                   </a>
                 </div>
               </div>
