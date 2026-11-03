@@ -8,7 +8,7 @@ import contactRoutes from './routes/contactRoutes.js'
 import careerRoutes from './routes/careerRoutes.js'
 import bookingRoutes from './routes/bookingRoutes.js'
 import zohoAuthRoutes from './routes/zohoAuthRoutes.js'
-
+import transporter from './config/mailer.js'
 const app = express()
 const PORT = Number(process.env.PORT) || 5000
 const isProd = process.env.NODE_ENV === 'production'
@@ -57,15 +57,30 @@ const allowedOrigins = process.env.CLIENT_URL
       ...(!isProd ? ['http://localhost:5173', 'http://localhost:3000'] : []),
     ]
 
+// app.use(
+//   cors({
+//     origin: process.env.CLIENT_URL || 'http://localhost:5173',
+//   })
+// )
+
+const allowedOrigins = [
+  'https://zest-botz-solutions-one.vercel.app',
+  'http://localhost:5173',
+]
+
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (such as mobile apps, curl, or same-origin server requests)
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true)
       }
-      return callback(new Error('Blocked by CORS policy.'))
+
+      console.error('CORS blocked origin:', origin)
+      return callback(new Error('Not allowed by CORS'))
     },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 )
 
@@ -104,7 +119,32 @@ const bookingLimiter = rateLimit({
   },
 })
 
-const healthHandler = (_req, res) => {
+
+app.get('/api/test-email', async (_req, res) => {
+  try {
+    await transporter.verify()
+
+    res.json({
+      success: true,
+      message: 'SMTP connection verified successfully.',
+    })
+  } catch (error) {
+    console.error('SMTP verification failed:', {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      responseCode: error.responseCode,
+    })
+
+    res.status(500).json({
+      success: false,
+      message: 'SMTP verification failed.',
+      code: error.code,
+    })
+  }
+})
+
+app.get('/api/health', (_req, res) => {
   res.json({
     success: true,
     message: 'ZestBotz backend is running.',
