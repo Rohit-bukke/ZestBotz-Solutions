@@ -37,3 +37,4 @@ export function getApiEndpoint(path) {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
   return `${API_BASE_URL}${normalizedPath}`
 }
+
