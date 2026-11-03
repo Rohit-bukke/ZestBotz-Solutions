@@ -9,7 +9,7 @@ import contactRoutes from './routes/contactRoutes.js'
 import careerRoutes from './routes/careerRoutes.js'
 import bookingRoutes from './routes/bookingRoutes.js'
 import zohoAuthRoutes from './routes/zohoAuthRoutes.js'
-
+import transporter from './config/mailer.js'
 const app = express()
 const PORT = Number(process.env.PORT) || 5000
 app.set('trust proxy', 1)
@@ -76,6 +76,31 @@ const bookingLimiter = rateLimit({
     success: false,
     message: 'Too many booking submissions. Please try again later.',
   },
+})
+
+
+app.get('/api/test-email', async (_req, res) => {
+  try {
+    await transporter.verify()
+
+    res.json({
+      success: true,
+      message: 'SMTP connection verified successfully.',
+    })
+  } catch (error) {
+    console.error('SMTP verification failed:', {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      responseCode: error.responseCode,
+    })
+
+    res.status(500).json({
+      success: false,
+      message: 'SMTP verification failed.',
+      code: error.code,
+    })
+  }
 })
 
 app.get('/api/health', (_req, res) => {
