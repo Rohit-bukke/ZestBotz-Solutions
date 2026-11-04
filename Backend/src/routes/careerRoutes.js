@@ -119,7 +119,7 @@ router.post('/apply', async (req, res) => {
     }
 
     await transporter.sendMail({
-      from: `"ZestBotz Careers" <${process.env.EMAIL_USER}>`,
+      from: process.env.EMAIL_USER,
       to: process.env.CONTACT_EMAIL,
       replyTo: email.trim(),
       subject: `Career application: ${role}`,

@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
     }
 
     await transporter.sendMail({
-      from: `"ZestBotz Website" <${process.env.EMAIL_USER}>`,
+      from: process.env.EMAIL_USER,
       to: process.env.CONTACT_EMAIL,
       replyTo: email.trim(),
       subject: `Website enquiry: ${interest.trim() || 'General enquiry'}`,
