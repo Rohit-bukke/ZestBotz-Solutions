@@ -145,7 +145,16 @@ ${message.trim() || 'Not provided'}
       message: 'Application submitted successfully. Thank you for your interest!',
     })
   } catch (error) {
-    console.error('Career application email failed:', error.message)
+    
+    console.error('Email sending failed:', {
+  message: error.message,
+  code: error.code,
+  command: error.command,
+  responseCode: error.responseCode,
+  response: error.response,
+  contactEmailConfigured: Boolean(process.env.CONTACT_EMAIL),
+  emailUserConfigured: Boolean(process.env.EMAIL_USER),
+})
 
     return res.status(500).json({
       success: false,
