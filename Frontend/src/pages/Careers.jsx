@@ -1,63 +1,6 @@
 
 import { useRef, useState } from 'react'
 
-const careerAreas = [
-  {
-    number: '01',
-    title: 'AI & Automation',
-    description:
-      'Explore intelligent automation, AI integrations, LLM-powered applications, and workflow optimization.',
-    tags: ['Python', 'AI APIs', 'Automation'],
-  },
-  {
-    number: '02',
-    title: 'Web Development',
-    description:
-      'Build responsive web applications, reliable APIs, and modern digital experiences.',
-    tags: ['React', 'Node.js', 'REST APIs'],
-  },
-  {
-    number: '03',
-    title: 'Data & Analytics',
-    description:
-      'Work with data collection, processing, visualization, and analytics-driven solutions.',
-    tags: ['Python', 'SQL', 'Data'],
-  },
-]
-
-const sampleOpenings = [
-  {
-    id: '01',
-    title: 'AI Automation Intern',
-    department: 'AI & Automation',
-    type: 'Internship',
-    description:
-      'Explore browser automation, workflow automation, and integrations with AI-powered services.',
-    skills: ['Python', 'Automation', 'AI APIs'],
-    role: 'AI Automation Intern',
-  },
-  {
-    id: '02',
-    title: 'Web Development Intern',
-    department: 'Engineering',
-    type: 'Internship',
-    description:
-      'Contribute to responsive web interfaces, frontend components, and backend API integrations.',
-    skills: ['React', 'JavaScript', 'Node.js'],
-    role: 'Web Development Intern',
-  },
-  {
-    id: '03',
-    title: 'Data Analytics Intern',
-    department: 'Data & Analytics',
-    type: 'Internship',
-    description:
-      'Explore data preparation, analysis, and reporting to help turn raw data into useful insights.',
-    skills: ['Python', 'SQL', 'Analytics'],
-    role: 'Data Analytics Intern',
-  },
-]
-
 const initialForm = {
   name: '',
   email: '',
@@ -213,20 +156,7 @@ export function Careers() {
             </button>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-black/10 pt-6 text-sm text-[#666666]">
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#E8590C]" />
-              AI & Automation
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#E8590C]" />
-              Web Development
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#E8590C]" />
-              Data & Analytics
-            </span>
-          </div>
+          
         </div>
       </section>
 
@@ -251,121 +181,37 @@ export function Careers() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {careerAreas.map((area) => (
-              <article
-                key={area.number}
-                className="group rounded-2xl border border-black/[0.08] bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E8590C]/40 hover:shadow-xl hover:shadow-orange-900/5 sm:p-8"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-3xl text-[#E8590C]">
-                    {area.number}
-                  </span>
-                  <span className="text-xl text-black/30 transition group-hover:text-[#E8590C]">
-                    
-                  </span>
-                </div>
 
-                <h3 className="mt-7 text-2xl">{area.title}</h3>
-
-                <p className="mt-3 min-h-20 text-sm leading-7 text-[#666666]">
-                  {area.description}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {area.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[#F7F7F7] px-3 py-1.5 text-xs text-[#555555]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Sample openings */}
-      <section className="bg-[#F8F7F5] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+      {/* Recruitment status */}
+      <section className="bg-[#F8F7F5] px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#E8590C]">
-                Explore opportunities
-              </p>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#E8590C]">
+              Explore opportunities
+            </p>
 
-              <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
-                Find a role that fits you
-              </h2>
+            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-5xl">
+              No open positions at the moment
+            </h2>
 
-              <p className="mt-4 text-sm leading-7 text-[#666666] sm:text-base">
-                Interested in one of these areas? Explore the example roles
-                below or submit a general application.
-              </p>
-            </div>
+            <p className="mt-4 text-sm leading-7 text-[#666666] sm:text-base">
+              We don&apos;t have any active vacancies right now, but we&apos;re
+              always interested in connecting with talented people. Submit your
+              profile through the application form, and we&apos;ll keep your
+              details in mind for future opportunities.
+            </p>
 
-            <span className="inline-flex w-fit items-center rounded-full border border-[#E8590C]/20 bg-white px-4 py-2 text-xs font-medium text-[#B9470A]">
-              Sample listings · Demo only
-            </span>
+            <button
+              type="button"
+              onClick={() => handleApply('General application')}
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#E8590C] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c94b08]"
+            >
+              Submit your profile
+            </button>
           </div>
-
-          <div className="mt-10 space-y-4">
-            {sampleOpenings.map((job) => (
-              <article
-                key={job.id}
-                className="rounded-2xl border border-black/[0.07] bg-white p-6 transition hover:border-[#E8590C]/40 sm:p-8"
-              >
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-[#E8590C]/10 px-3 py-1 text-xs font-medium text-[#C94B08]">
-                        {job.type}
-                      </span>
-                      <span className="text-xs text-[#777777]">
-                        {job.department}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-4 text-2xl sm:text-3xl">
-                      {job.title}
-                    </h3>
-
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#666666]">
-                      {job.description}
-                    </p>
-
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {job.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-full border border-black/10 px-3 py-1.5 text-xs text-[#555555]"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => handleApply(job.role)}
-                    className="inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-full bg-[#111111] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#E8590C] lg:self-center"
-                  >
-                    Apply for this role
-                    <span aria-hidden="true"></span>
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <p className="mt-5 text-xs leading-6 text-[#777777]">
-            Note: These are sample roles for demonstrating the careers page.
-            They do not represent confirmed vacancies or active recruitment.
-          </p>
         </div>
       </section>
 
@@ -531,15 +377,6 @@ export function Careers() {
                 >
                   <option value="General application">
                     General application
-                  </option>
-                  <option value="AI Automation Intern">
-                    AI Automation Intern
-                  </option>
-                  <option value="Web Development Intern">
-                    Web Development Intern
-                  </option>
-                  <option value="Data Analytics Intern">
-                    Data Analytics Intern
                   </option>
                 </select>
               </div>

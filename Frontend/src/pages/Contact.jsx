@@ -386,6 +386,20 @@ export function Contact() {
                   </a>
                 </div>
               </div>
+              <div className="flex gap-4">
+  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E8590C]/10 text-lg text-[#E8590C]">
+    ☎
+  </span>
+  <div>
+    <h3 className="text-sm font-semibold">Phone</h3>
+    <a
+      href="tel:+917973645912"
+      className="mt-1 inline-block text-sm text-[#666666] transition hover:text-[#E8590C]"
+    >
+      +91 7973645912
+    </a>
+  </div>
+</div>
             </div>
 
             <div className="mt-8 border-t border-black/10 pt-6">
