@@ -11,4 +11,16 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+transporter.verify()
+  .then(() => {
+    console.log('SMTP connection verified successfully')
+  })
+  .catch((error) => {
+    console.error('SMTP verification failed:', {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+    })
+  })
+
 export default transporter
