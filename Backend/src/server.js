@@ -25,6 +25,8 @@ app.use(helmet())
 const allowedOrigins = [
   'https://zest-botz-solutions-one.vercel.app',
   'http://localhost:5173',
+  'https://zestbotz.com',
+  'https://www.zestbotz.com'
 ]
 
 app.use(
