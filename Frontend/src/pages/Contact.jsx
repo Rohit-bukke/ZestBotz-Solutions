@@ -2,7 +2,7 @@ import { API_BASE_URL } from '../config/api'
 
 import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { Camera,  School, Sparkles, CheckCircle2, Instagram  } from 'lucide-react'
+import { Camera, School } from 'lucide-react'
 
 const interests = [
   'SchoolOS (School Operations Platform)',
